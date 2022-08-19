@@ -1,0 +1,37 @@
+public class Eq2g {
+    private int a;
+    private int b;
+    private int c;
+    private double result;
+    private double delta;
+
+    public Eq2g(int a, int b, int c,double delta, double result){
+
+        this.a=a;
+        this.b=b;
+        this.c=c;
+        this.delta=delta;
+        this.result=result;
+    }
+
+    public int getA() {
+        return a;
+    }
+    public int getB() {
+        return b;
+    }
+    public int getC() {
+        return c;
+    }
+    public double Delta() {
+        delta = Math.pow(getB(),2)-(4*getA()*getC());
+        return delta;
+    }
+
+    public double raizA(){
+        double raizPos = (b*-1)+(Math.sqrt(Delta()))
+    }
+
+    
+    
+}
