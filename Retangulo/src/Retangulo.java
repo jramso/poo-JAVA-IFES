@@ -6,10 +6,10 @@ public class Retangulo {
     private Ponto2D vI4; // inferior 4
 
     public Retangulo(Ponto2D vS1, Ponto2D vI4){
-        vS1=this.vS1;
-        vI4=this.vI4;
-        vI3= new Ponto2D(vI4.getX(),vS1.getY());
-        vS2= new Ponto2D(vS1.getX(),vI4.getY());
+        this.vS1=vS1;
+        this.vI4=vI4;
+        this.vS2= new Ponto2D(vI4.getX(), vS1.getY());
+        this.vI3= new Ponto2D(vS1.getX(),vI4.getY());
     }
     public Ponto2D getVS1() {
         return vS1;
@@ -23,10 +23,10 @@ public class Retangulo {
     public Ponto2D getvI4() {
         return vI4;
     }
-    public Double area(){
-        return vS1.distancia(vS2) *vS1.distancia(vI3);
+    public float area(){
+        return vS1.distancia(vS2) * vS1.distancia(vI3);
     }
-    public Double perimetro(){
+    public float perimetro(){
         return 2*(vS1.distancia(vS2) + vS1.distancia(vI3));
     }
     public boolean pertence(Ponto2D ponto){
@@ -34,7 +34,7 @@ public class Retangulo {
     }
     
     public String toString(){
-        return "V1:"+vS1.toString()+" V2:"+vS2.toString()+" V3:"+vI3.toString()+" V4:"+vI4.toString();
+        return "V1:"+this.vS1.toString()+" V2:"+this.vS2.toString()+" V3:"+this.vI3.toString()+" V4:"+this.vI4.toString();
     }
 
 }

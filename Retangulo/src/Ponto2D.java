@@ -9,11 +9,11 @@ public class Ponto2D {
     }
 
     /* METODOS */
-    public Double distancia(Ponto2D pontoB){
+    public float distancia(Ponto2D pontoB){
         /* calcular distancia entre 2 pontos (Math devolve double)*/
         /* ­↓↓↓↓↓ Fomula distancia entre 2 pontos ↓↓↓
         dist = ((x-xB)²+(y-yB)²))**1/2 */
-        return Math.sqrt(Math.pow(x-pontoB.getX(),2)+Math.pow(y-pontoB.getY(), 2));
+        return (float) Math.sqrt(Math.pow(x-pontoB.getX(),2)+Math.pow(y-pontoB.getY(), 2));
     }
     public boolean igual(Ponto2D pontoB){
         return x==pontoB.getX() && y==pontoB.getY();
@@ -27,6 +27,6 @@ public class Ponto2D {
     }
 
     public String toString(){
-        return "X= "+getX()+" Y= "+getY();
+        return "{X="+getX()+" Y="+getY()+"}";
     }
 }
