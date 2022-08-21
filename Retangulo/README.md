@@ -16,7 +16,7 @@ The workspace contains two folders by default, where:
     + `Ponto2D` vS2: vertice superior 2
     + `Ponto2D` vI3: vertice inferior 3
     + `Ponto2D` vI4: vertice inferior 4
-    X e Y dos respectivos pontos (vertices).
+    + X e Y dos respectivos pontos (vertices).
 - `Objetos`:
     + Ponto2D
     + Retangulo
