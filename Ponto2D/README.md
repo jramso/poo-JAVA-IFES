@@ -15,9 +15,9 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 
 ## About the code
 - `src`:
-    [Ponto2D](src/Ponto2D.java)
+    - [Ponto2D](src/Ponto2D.java)
     O projeto desse codigo é definir um ponto no plano cartesiano como um objeto, calcular a distancia entre 2 pontos e conferir se 2 pontos sao iguais
-    [Aplicação](src/TestaPonto2D.java)
+    - [Aplicação](src/TestaPonto2D.java)
     Testar os métodos do Ponto2D.
 - `Atributos`:
     x: linha horizontal
