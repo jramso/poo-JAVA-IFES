@@ -10,7 +10,7 @@ The workspace contains two folders by default, where:
 - `src`:
     - [Retangulo](src/Retangulo.java): Define um retangulo a partir de 2 pontos do plano cartesiano
     - [Ponto no plano](src/Ponto2D.java): Define um ponto no plano cartesiano... `Mais informações:`[Ponto2D](../Ponto2D/README.md).
-    -[Aplicação](src/testaRetangulo.java): Testa se foi criado o retangulo e seus métodos.
+    - [Aplicação](src/testaRetangulo.java): Testa se foi criado o retangulo e seus métodos.
 - `Variaveis`:
     `Ponto2D` vS1: vértice superior 1
     `Ponto2D` vS2: vertice superior 2
