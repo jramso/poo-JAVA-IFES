@@ -1,4 +1,4 @@
-public class Principal {
+public class TestaPonto2D {
     public static void main(String[] args) {
         Ponto2D a = new Ponto2D(5, 3);
         Ponto2D b = new Ponto2D(7, 4);
