@@ -41,8 +41,12 @@ public class Eq2g {
     public double raizB(){
         double num = (-1*b)-(Math.sqrt(Delta()));
         double den= 2*getA();
-        double raizPos=num/den;
-        return raizPos;
+        double raizNeg=num/den;
+        return raizNeg;
+    }
+
+    public double calcula(double raiz){
+        return Math.pow((getA()*raiz),2)+getB()*raiz+getC();
     }
 
     public String toString(){
