@@ -19,7 +19,7 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
     Qual deve ser a quantidade de bonés a fim de se obter o lucro máximo nas vendas?
 - [Eq2g](src/Eq2g.java): 
     + + Modela como objeto uma equação de segundo grau a partir dos coeficientes calcula o delta e as raízes utilizando como base a formula de bhaskara por fim calcula o resultado da equação.
--[TestaEq2G](src/TestaEq2g.java): 
+- [TestaEq2G](src/TestaEq2g.java): 
     + + testa os metodos do objeto Eq2g.
 
 - `vars`
