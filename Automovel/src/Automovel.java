@@ -1,19 +1,19 @@
-
+import javax.swing.JOptionPane;
 public class Automovel {
     //Variaveis fixas
 
-    private double comprimento; // cm
-    private double altura;  // cm
-    private double maxCarg; // Kg
-    private double maxGas; // L
-    private int maxPsg; // Nat. 
+    private double comprimento; // comprimento do automovel
+    private double altura;  // altura do auto
+    private double maxCarg; // maximo de carga em kg que o auto leva
+    private double maxGas; // maximo de gasolina em L
+    private int maxPsg; // maximo de pessoas / passageiros
 
     //Variaveis relativas
-    private double peso; //Kg
-    private int curPsg; // Nat.
-    private double curGas; // L == KG
-    private boolean ligado; // On/Off
-    private double velAtual;
+    private double peso; // peso do carro
+    private int curPsg; // qtd atual de passageiros
+    private double curGas; // qtd atual de gasolina
+    private boolean ligado; // auto On/Off 
+    private double velAtual; //velocidade atual do auto
 
     public Automovel(Double velAtual,Double comprimento, Double altura, Double maxCarg,Double maxGas,Double peso,Double curGas,int maxPsg,int curPsg,boolean ligado){
         this.comprimento=comprimento;
@@ -53,16 +53,28 @@ public class Automovel {
         return getVelAtual();
     }
 
+    public double parar(){
+        return acelerar(0);
+    }
+
     public Boolean alertPeso(){
         return true;
     }
     
-    public double abastecer(){
-        return 0.0;
+    public double abastecer(double gasol){ //pode ser void
+        if(getCurGas()+gasol<=getMaxGas()){
+            setCurGas(curGas+gasol);
+            return getCurGas();
+        }else{
+            JOptionPane.showMessageDialog(null, "a quantidade corrente no tanque não deve ultrapassar a capacidade máxima do tanque");
+            return getCurGas();
+        }
     }
     
-    public int embarque(){
-        return 0;
+    public void embarque(int newPsg){
+        if(getCurPsg()+newPsg<=getMaxPsg()){
+            setCurPsg(curPsg);
+        }
     }
     public int desembarque(){
         return 0;
