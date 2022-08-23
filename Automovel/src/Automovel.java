@@ -1,4 +1,10 @@
-import javax.swing.JOptionPane;
+/*
+ * Classe responsavel por moldar um automovel
+ * 
+ * @author Josué Ramos Souza {20202BSI0292}
+ */
+
+import javax.swing.JOptionPane; //import classe de alerta
 public class Automovel {
     //Variaveis fixas
 
@@ -34,18 +40,24 @@ public class Automovel {
      ************** METODOS *************************
      */
     public double acelerar(double vel){
-        if (getLigado()==true){
+        if (getLigado()==true && getCurPsg()>0){
+            reabastece();
             if(vel>=getVelAtual()){
                 setVelAtual(vel);
-                System.out.println("acelerando...");
+                System.out.println("acelerando..."+this.velAtual);
             }else{
                 freiar(vel);
             }
+        }else if(getCurPsg()==0){
+            JOptionPane.showMessageDialog(null, "O carro precisa de um motorista!");
         }
         return getVelAtual();
     }
+
+
     public double freiar(double vel){
         if(getLigado()==true){
+            reabastece();
             if(vel<getVelAtual()){
                 setVelAtual(vel);
                 System.out.println("freiando");
@@ -62,7 +74,7 @@ public class Automovel {
         if(maxCarg<(this.curPsg*80+this.curGas)){
             JOptionPane.showMessageDialog(null, "O carro está com sobre-peso, o peso máximo é"+this.maxCarg);
         }else{
-            JOptionPane.showMessageDialog(null, "O carro nao esta com sober-peso, O peso máximo é"+this.maxCarg);
+            JOptionPane.showMessageDialog(null,"O carro nao esta com sobre-peso, O peso máximo é"+this.maxCarg);
         }
     }
     
@@ -79,8 +91,11 @@ public class Automovel {
     
     public void embarque(int newPsg){
         if(getCurPsg()+newPsg<=getMaxPsg()){
-            setCurPsg(curPsg);
+            setCurPsg(curPsg+newPsg);
+            reabastece();
             alertPeso();
+        }else{
+            JOptionPane.showMessageDialog(null, "impossivel comportar mais passageiros");
         }
     }
 
@@ -88,7 +103,13 @@ public class Automovel {
         if(this.velAtual==0.0 && this.curPsg>=dropPsg){
             setCurPsg(curPsg-dropPsg);
         }else{
-            JOptionPane.showMessageDialog(null, "Pular do veiculo em movimento? que Deus salve a sua alma");
+            JOptionPane.showMessageDialog(null, "O veiculo ainda esta em movimento");
+        }
+    }
+
+    public void reabastece(){
+        if(this.curGas<=(this.maxGas/4.0)){
+            JOptionPane.showMessageDialog(null, "a gasolina esta abaixo do recomendado favor reabastecer("+getCurGas()+"L /"+getMaxGas()+"L)");
         }
     }
     
@@ -147,6 +168,7 @@ public class Automovel {
     }
 
     public void setCurGas(double curGas) {
+        reabastece();
         this.curGas = curGas;
     }
 
@@ -154,4 +176,10 @@ public class Automovel {
         this.ligado = ligado;
     }
 
+    /*
+     *  Log toString()
+     */
+    public String toString(){
+        return "Comprimento: {"+getComprimento()+"}\nAltura: {"+getAltura()+"}\nPeso: {"+getPeso()+"}\nMax. Carga:{"+getMaxCarg()+"}\nMax. Passageiros: {"+getMaxPsg()+"}\nPassageiros atualmente no veiculo:{"+getCurPsg()+"}";
+    }
 }
