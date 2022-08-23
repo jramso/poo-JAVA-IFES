@@ -15,23 +15,24 @@ public class Automovel {
     private boolean ligado; // auto On/Off 
     private double velAtual; //velocidade atual do auto
 
-    public Automovel(Double velAtual,Double comprimento, Double altura, Double maxCarg,Double maxGas,Double peso,Double curGas,int maxPsg,int curPsg,boolean ligado){
+    public Automovel(double comprimento, double altura, double maxCarg,double maxGas,double peso,double curGas,int maxPsg,int curPsg,double velAtual,boolean ligado){
         this.comprimento=comprimento;
         this.altura=altura;
-        this.maxCarg=maxCarg;
-        this.maxGas=maxGas;
-        this.curGas=curGas;
         this.peso=peso;
+        this.maxCarg=maxCarg;
         this.maxPsg=maxPsg;
         this.curPsg=curPsg;
-        this.ligado=ligado;
+        this.maxGas=maxGas;
+        this.curGas=curGas;
         this.velAtual=velAtual;
-        velAtual=0.0;
+        this.ligado=ligado;
     }
 
     
     
-    
+    /*
+     ************** METODOS *************************
+     */
     public double acelerar(double vel){
         if (getLigado()==true){
             if(vel>=getVelAtual()){
@@ -53,17 +54,22 @@ public class Automovel {
         return getVelAtual();
     }
 
-    public double parar(){
-        return acelerar(0);
+    public void parar(){
+        acelerar(0);
     }
 
-    public Boolean alertPeso(){
-        return true;
+    public void alertPeso(){
+        if(maxCarg<(this.curPsg*80+this.curGas)){
+            JOptionPane.showMessageDialog(null, "O carro está com sobre-peso, o peso máximo é"+this.maxCarg);
+        }else{
+            JOptionPane.showMessageDialog(null, "O carro nao esta com sober-peso, O peso máximo é"+this.maxCarg);
+        }
     }
     
     public double abastecer(double gasol){ //pode ser void
         if(getCurGas()+gasol<=getMaxGas()){
             setCurGas(curGas+gasol);
+            alertPeso();
             return getCurGas();
         }else{
             JOptionPane.showMessageDialog(null, "a quantidade corrente no tanque não deve ultrapassar a capacidade máxima do tanque");
@@ -74,18 +80,25 @@ public class Automovel {
     public void embarque(int newPsg){
         if(getCurPsg()+newPsg<=getMaxPsg()){
             setCurPsg(curPsg);
+            alertPeso();
         }
     }
-    public int desembarque(){
-        return 0;
+
+    public void desembarque(int dropPsg){
+        if(this.velAtual==0.0 && this.curPsg>=dropPsg){
+            setCurPsg(curPsg-dropPsg);
+        }else{
+            JOptionPane.showMessageDialog(null, "Pular do veiculo em movimento? que Deus salve a sua alma");
+        }
     }
     
+    /*
+     * GETTERS AND SETTERS
+     * 
+     */
     
     public double getComprimento() {
         return comprimento;
-    }
-    public void setComprimento(double comprimento) {
-        this.comprimento = comprimento;
     }
 
     public double getVelAtual() {
@@ -105,28 +118,12 @@ public class Automovel {
         return altura;
     }
 
-    public void setAltura(double altura) {
-        this.altura = altura;
-    }
-
     public double getMaxCarg() {
         return maxCarg;
     }
 
-    public void setMaxCarg(double maxCarg) {
-        this.maxCarg = maxCarg;
-    }
-
     public double getMaxGas() {
         return maxGas;
-    }
-
-    public void setMaxGas(double maxGas) {
-        this.maxGas = maxGas;
-    }
-
-    public void setMaxPsg(int maxPsg) {
-        this.maxPsg = maxPsg;
     }
 
     public double getPeso() {
