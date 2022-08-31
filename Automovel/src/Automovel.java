@@ -19,7 +19,7 @@ public class Automovel {
     private double curGas; // qtd atual de gasolina
     private boolean ligado; // auto On/Off 
     private double velAtual; //velocidade atual do auto
-    private String message;
+    private String message; //mensagens de aviso
 
     public Automovel(double comprimento, double altura, double maxCarg,double maxGas,double peso,double curGas,int maxPsg,int curPsg,double velAtual,boolean ligado){
         this.comprimento=comprimento;
