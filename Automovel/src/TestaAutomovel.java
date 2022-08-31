@@ -39,14 +39,12 @@ public class TestaAutomovel {
         JOptionPane.showMessageDialog(null, car1.getMessage());
         car1.desembarque(car1.getCurPsg());
         if(car1.getCurPsg()==0 && car1.getLigado()==true){
-            JOptionPane.showMessageDialog(null,"Carro Ligado","Aviso", JOptionPane.WARNING_MESSAGE, null)
+            JOptionPane.showMessageDialog(null,"Carro Ligado","Aviso", JOptionPane.WARNING_MESSAGE, null);
         }
         car1.setLigado(false);
+        System.out.println("Desligando");
         JOptionPane.showMessageDialog(null,"Carro Desligado");
-        
+
         JOptionPane.showMessageDialog(null,car1.toString());
-        // System.out.println("Velocidade"+car1.getVelAtual());
-        // car1.setVelAtual(car1.getVelAtual()+5.0);
-        // System.out.println("Velocidade"+car1.getVelAtual());
     }
 }

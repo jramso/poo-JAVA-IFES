@@ -123,7 +123,7 @@ public class Automovel {
     }
 
     public void veicStatus(){
-        setMessage("Peso atual do veiculo:{"+this.peso+"}\nVel Atual:{"+this.velAtual+"}\n Passageiros no veiculo:{"+this.curPsg+"}\n Gasolina atual:{"+this.curGas+"}\n Veiculo ligado:{"+this.ligado+"}\n");
+        setMessage("Peso de carga do veiculo:{"+(this.curPsg*80+this.curGas)+"}\nVel Atual:{"+this.velAtual+"}\n Passageiros no veiculo:{"+this.curPsg+"}\n Gasolina atual:{"+this.curGas+"}\n Veiculo ligado:{"+this.ligado+"}\n");
     }
 
     
