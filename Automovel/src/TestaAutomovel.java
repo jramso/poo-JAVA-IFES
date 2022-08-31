@@ -28,9 +28,15 @@ public class TestaAutomovel {
         JOptionPane.showMessageDialog(null, car1.getMessage());
         car1.abastecer(15); //tentando abastecer 15 litros
         JOptionPane.showMessageDialog(null, car1.getMessage());
+        car1.setCurGas(3); //tentando abastecer 15 litros
+        JOptionPane.showMessageDialog(null, car1.getMessage());
         car1.embarque(3); //tentando entrar 3 pessoas
-        car1.setCurGas(3); // gastando gasolina ate 10 litros
+        JOptionPane.showMessageDialog(null, car1.getMessage());
+        car1.setCurGas(2); // gastando gasolina ate 10 litros
+        JOptionPane.showMessageDialog(null, car1.getMessage());
+        car1.parar();
         car1.abastecer(5); // abastecendo 5 litros
+        JOptionPane.showMessageDialog(null, car1.getMessage());
         
         JOptionPane.showMessageDialog(null,car1.toString());
         // System.out.println("Velocidade"+car1.getVelAtual());
