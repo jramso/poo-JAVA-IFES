@@ -4,7 +4,6 @@
  * @author Josué Ramos Souza {20202BSI0292}
  */
 
-import javax.swing.JOptionPane; //import classe de alerta
 public class Automovel {
     //Variaveis fixas
 
@@ -20,6 +19,7 @@ public class Automovel {
     private double curGas; // qtd atual de gasolina
     private boolean ligado; // auto On/Off 
     private double velAtual; //velocidade atual do auto
+    private String message;
 
     public Automovel(double comprimento, double altura, double maxCarg,double maxGas,double peso,double curGas,int maxPsg,int curPsg,double velAtual,boolean ligado){
         this.comprimento=comprimento;
@@ -32,6 +32,7 @@ public class Automovel {
         this.curGas=curGas;
         this.velAtual=velAtual;
         this.ligado=ligado;
+        this.message="";
     }
 
     
@@ -44,12 +45,12 @@ public class Automovel {
             reabastece();
             if(vel>=getVelAtual()){
                 setVelAtual(vel);
-                System.out.println("acelerando..."+this.velAtual);
+                setMessage("Acelerando:"+this.velAtual);
             }else{
                 freiar(vel);
             }
         }else if(getCurPsg()==0){
-            JOptionPane.showMessageDialog(null, "O carro precisa de um motorista!");
+            setMessage("O carro precisa de um motorista!");
         }
         return getVelAtual();
     }
@@ -60,64 +61,83 @@ public class Automovel {
             reabastece();
             if(vel<getVelAtual()){
                 setVelAtual(vel);
-                System.out.println("freiando");
+                setMessage("Freiando: "+this.velAtual+"Km/h");
             }
         }
         return getVelAtual();
     }
 
     public void parar(){
-        acelerar(0);
+        freiar(0);
+        setMessage("Carro parado: "+this.velAtual+"km/h");
     }
 
     public void alertPeso(){
         if(maxCarg<(this.curPsg*80+this.curGas)){
-            JOptionPane.showMessageDialog(null, "O carro está com sobre-peso, o peso máximo é"+this.maxCarg);
+            setMessage("O carro está com sobre-peso, o peso máximo é "+this.maxCarg+"Kg");
         }else{
-            JOptionPane.showMessageDialog(null,"O carro nao esta com sobre-peso, O peso máximo é"+this.maxCarg);
+            setMessage("Peso atual "+(this.curPsg*80+this.curGas)+"Kg, O peso máximo é "+this.maxCarg+"Kg");
         }
     }
     
-    public double abastecer(double gasol){ //pode ser void
+    public void abastecer(double gasol){ //pode ser void
         if(getCurGas()+gasol<=getMaxGas()){
+            if(this.velAtual>0){
+                setMessage("O veiculo ainda esta em movimento");
+            }
             setCurGas(curGas+gasol);
             alertPeso();
-            return getCurGas();
+            setMessage("tanque abastecido gasolina atual: "+this.curGas+"L");
         }else{
-            JOptionPane.showMessageDialog(null, "a quantidade corrente no tanque não deve ultrapassar a capacidade máxima do tanque");
-            return getCurGas();
+            setMessage("a quantidade corrente no tanque não deve ultrapassar a capacidade máxima do tanque");
         }
     }
     
     public void embarque(int newPsg){
         if(getCurPsg()+newPsg<=getMaxPsg()){
-            setCurPsg(curPsg+newPsg);
-            reabastece();
-            alertPeso();
+            if(this.velAtual>0){
+                setMessage("O veiculo ainda esta em movimento, impossivel embarcar!");
+            }else{
+                setCurPsg(curPsg+newPsg);
+                reabastece();
+                alertPeso();
+            }
         }else{
-            JOptionPane.showMessageDialog(null, "impossivel comportar mais passageiros");
+            setMessage ("impossivel comportar mais passageiros, veiculo lotado");
         }
     }
 
     public void desembarque(int dropPsg){
         if(this.velAtual==0.0 && this.curPsg>=dropPsg){
-            setCurPsg(curPsg-dropPsg);
+            setCurPsg(this.curPsg-dropPsg);
+            veicStatus();
         }else{
-            JOptionPane.showMessageDialog(null, "O veiculo ainda esta em movimento");
+            setMessage("O veiculo ainda esta em movimento");
         }
     }
 
     public void reabastece(){
         if(this.curGas<=(this.maxGas/4.0)){
-            JOptionPane.showMessageDialog(null, "a gasolina esta abaixo do recomendado favor reabastecer("+getCurGas()+"L /"+getMaxGas()+"L)");
+            setMessage("a gasolina esta abaixo do recomendado favor reabastecer("+getCurGas()+"L /"+getMaxGas()+"L)");
         }
     }
+
+    public void veicStatus(){
+        setMessage("Peso atual do veiculo:{"+this.peso+"}\nVel Atual:{"+this.velAtual+"}\n Passageiros no veiculo:{"+this.curPsg+"}\n Gasolina atual:{"+this.curGas+"}\n Veiculo ligado:{"+this.ligado+"}\n");
+    }
+
     
     /*
-     * GETTERS AND SETTERS
-     * 
-     */
+    * GETTERS AND SETTERS
+    * 
+    */
+    public String getMessage(){
+        return message;
+    }
     
+    public void setMessage(String message){
+        this.message = message;
+    }
     public double getComprimento() {
         return comprimento;
     }
