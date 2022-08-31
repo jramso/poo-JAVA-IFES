@@ -188,8 +188,8 @@ public class Automovel {
     }
 
     public void setCurGas(double curGas) {
-        reabastece();
         this.curGas = curGas;
+        reabastece();
     }
 
     public void setLigado(boolean ligado) {
