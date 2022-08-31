@@ -32,4 +32,4 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 - [TestaAutomovel](src/TestaAutomovel.java): Teste da maioria das funcionalidades do automovel
 
 - - Vars
-+ + + Objeto car1 (exemplo de automovel carro): `type`: Automovel
++ + + `Objeto` car1 (exemplo de automovel carro): `type`: Automovel
