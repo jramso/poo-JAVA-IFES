@@ -37,6 +37,12 @@ public class TestaAutomovel {
         car1.parar();
         car1.abastecer(5); // abastecendo 5 litros
         JOptionPane.showMessageDialog(null, car1.getMessage());
+        car1.desembarque(car1.getCurPsg());
+        if(car1.getCurPsg()==0 && car1.getLigado()==true){
+            JOptionPane.showMessageDialog(null,"Carro Ligado","Aviso", JOptionPane.WARNING_MESSAGE, null)
+        }
+        car1.setLigado(false);
+        JOptionPane.showMessageDialog(null,"Carro Desligado");
         
         JOptionPane.showMessageDialog(null,car1.toString());
         // System.out.println("Velocidade"+car1.getVelAtual());
