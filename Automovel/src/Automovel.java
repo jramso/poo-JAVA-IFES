@@ -103,7 +103,7 @@ public class Automovel {
                 alertPeso();
             }
         }else{
-            setMessage ("impossivel comportar mais passageiros, veiculo lotado");
+            setMessage ("impossivel comportar mais "+newPsg+" passageiros");
         }
     }
 
