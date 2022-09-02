@@ -5,14 +5,16 @@ package Figura2D;
  *
  */
 
-//importando a classe 
+//importando a classe de Ponto
 import Ponto2D.Ponto2D;
-public class Figura2D extends Ponto2D{
+public class Figura2D{
     //figura base Quadrado
+    private Ponto2D centroG;
     private double area;
     private double perimetro;
-    public Figura2D(Ponto2D origem){
-        super(origem.getX(),origem.getY());
+
+    public Figura2D(){
+        this.centroG=new Ponto2D(0, 0);
         this.area=0;
         this.perimetro=0;
     }
@@ -33,6 +35,11 @@ public class Figura2D extends Ponto2D{
         return this.perimetro;
     }
 
+    public Ponto2D calculaCG(double base, double altura){ // WRONG!!!!!!!!!!!
+        centroG=new Ponto2D(centroG.getX()+(base/2), centroG.getY()+(altura/2));
+        return this.centroG;
+    }
+
     /** 
      * Metodos Getters and Setters
      */
@@ -50,6 +57,13 @@ public class Figura2D extends Ponto2D{
 
     public void setPerimetro(double perimetro) {
         this.perimetro = perimetro;
+    }
+
+    public Ponto2D getCentroG() {
+        return centroG;
+    }
+    public void setCentroG(Ponto2D centroG) {
+        this.centroG = centroG;
     }
 
 

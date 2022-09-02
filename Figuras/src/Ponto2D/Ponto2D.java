@@ -2,10 +2,10 @@ package Ponto2D;
 
 public class Ponto2D {
 
-    private int x;
-    private int y;
+    private double x;
+    private double y;
     /* Constructor */
-    public Ponto2D(int x, int y){
+    public Ponto2D(double x, double y){
         this.x=x;
         this.y=y;
     }
@@ -21,10 +21,10 @@ public class Ponto2D {
         return x==pontoB.getX() && y==pontoB.getY();
     }
 
-    public int getX(){
+    public double getX(){
         return x;
     }
-    public int getY(){
+    public double getY(){
         return y;
     }
 
