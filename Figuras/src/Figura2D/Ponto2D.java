@@ -1,4 +1,4 @@
-package Ponto2D;
+package Figura2D;
 
 public class Ponto2D {
 

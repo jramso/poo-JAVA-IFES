@@ -1,12 +1,12 @@
 package Figura2D;
 
-import Ponto2D.Ponto2D;
-
 public class Retangulo extends Figura2D{
     private Ponto2D vS1; // vertice superior 1   //1  2
     private Ponto2D vS2; // vertice superior 2   //3  4
     private Ponto2D vI3; // inferior 3
     private Ponto2D vI4; // inferior 4
+    private double base;
+    private double altura;
 
     public Retangulo(Ponto2D vS1,Ponto2D vI4){
         super();
@@ -14,6 +14,8 @@ public class Retangulo extends Figura2D{
         this.vI4=vI4;
         this.vS2= new Ponto2D(vI4.getX(), vS1.getY());
         this.vI3= new Ponto2D(vS1.getX(),vI4.getY());
+        this.base=vI3.distancia(vI4);
+        this.altura=vI3.distancia(vS1);
     }
     public Ponto2D getVS1() {
         return vS1;
@@ -28,6 +30,29 @@ public class Retangulo extends Figura2D{
         return vI4;
     }
 
+    public double getBase() {
+        return base;
+    }
+    public double getAltura() {
+        return altura;
+    }
+
+    @Override
+    public double calculaArea() {
+        return base*altura;
+    }
+
+    @Override
+    public double calculaPerimetro() {
+        return (2*base)+(2*altura);
+    }
+
+    @Override
+    public Ponto2D calculaCG() {
+        setCentroG(new Ponto2D((base/2), (altura/2)));
+        return getCentroG();
+    }
+
     public boolean quadrado(){
         return vS1.distancia(vI3)==vS1.distancia(vS2);
     }
@@ -37,7 +62,7 @@ public class Retangulo extends Figura2D{
     }
     
     public String toString(){
-        return "V1:"+this.vS1.toString()+" V2:"+this.vS2.toString()+" V3:"+this.vI3.toString()+" V4:"+this.vI4.toString();
+        return "Vertices:\nV1:"+this.vS1.toString()+"\nV2:"+this.vS2.toString()+"\nV3:"+this.vI3.toString()+"\nV4:"+this.vI4.toString()+"\nCentro de gravidade:"+calculaCG()+"\nArea:{"+calculaArea()+"}\nPerimetro:{"+calculaPerimetro()+"}\n\n";
     }
 
 }
