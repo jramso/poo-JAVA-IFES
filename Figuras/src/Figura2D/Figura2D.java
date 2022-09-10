@@ -23,10 +23,6 @@ public abstract class Figura2D{
     
     public abstract double calculaPerimetro();
 
-    public Ponto2D calculaCG(){ // WRONG!!!!!!!!!!!
-        return this.centroG;
-    }
-
     /** 
      * Metodos Getters and Setters
      */

@@ -51,7 +51,7 @@ public class Triangulo extends Figura2D{
     }
 
     public String toString(){
-        return "Vertices:\nV1:"+v1.toString()+"\nV2:"+v2.toString()+"\nV3:"+v3.toString()+"\nCentro de gravidade:{"+calculaCG()+"}\nArea:{"+calculaArea()+"}\nPerimetro:{"+calculaPerimetro()+"}\nÉ Triangulo retangulo:{"+triaRetangulo()+"}\n\n";
+        return "Vertices:\nV1:"+v1.toString()+"\nV2:"+v2.toString()+"\nV3:"+v3.toString()+"\nCentro de gravidade:{"+getCentroG()+"}\nArea:{"+calculaArea()+"}\nPerimetro:{"+calculaPerimetro()+"}\nÉ Triangulo retangulo:{"+triaRetangulo()+"}\n\n";
     }
 
 
