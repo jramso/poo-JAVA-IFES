@@ -16,6 +16,7 @@ public class Retangulo extends Figura2D{
         this.vI3= new Ponto2D(vS1.getX(),vI4.getY());
         this.base=vI3.distancia(vI4);
         this.altura=vI3.distancia(vS1);
+        setCentroG(new Ponto2D((base/2), (altura/2)));
     }
     public Ponto2D getVS1() {
         return vS1;
@@ -47,11 +48,6 @@ public class Retangulo extends Figura2D{
         return (2*base)+(2*altura);
     }
 
-    @Override
-    public Ponto2D calculaCG() {
-        setCentroG(new Ponto2D((base/2), (altura/2)));
-        return getCentroG();
-    }
 
     public boolean quadrado(){
         return vS1.distancia(vI3)==vS1.distancia(vS2);
