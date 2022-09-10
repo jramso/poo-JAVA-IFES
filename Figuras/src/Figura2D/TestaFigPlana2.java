@@ -7,13 +7,14 @@ import javax.swing.JOptionPane;
 public class TestaFigPlana2 {
     public static void main(String[] args) {
         ArrayList<Figura2D> lista = new ArrayList<>();
-
+        //LOOP
         for (int j=0;j<10;j++){
             //valores possiveis para o select
             Object[] possibleValues = { "Circulo", "Triangulo", "Retangulo" }; 
             //valores selecionados
             Object selectedValue = JOptionPane.showInputDialog(null,"Escolha a Figura", "Figura2D",JOptionPane.INFORMATION_MESSAGE, null,possibleValues, possibleValues[0]);
             
+            //CONDICIONAL
             if(selectedValue=="Triangulo"){
                 Ponto2D [] v1 = new Ponto2D[3]; //cria um vetor de Ponto2D
                 for (int i=0;i<3;i++){
@@ -24,9 +25,7 @@ public class TestaFigPlana2 {
                     v1[i]= new Ponto2D(x1, y1);
                 }
                 lista.add(new Triangulo(v1[0], v1[1], v1[2]));
-                // for (Figura2D tri:lista){
-                //     System.out.println("Area"+tri.calculaPerimetro());
-                // }
+
             }else if(selectedValue=="Circulo"){
                 String x= JOptionPane.showInputDialog(null, "Informe o X do centro do circulo:");
                 double x1=Double.parseDouble(x);
@@ -50,7 +49,9 @@ public class TestaFigPlana2 {
             }else{
                 JOptionPane.showMessageDialog(null,"Erro ao escolher! Não foi selecionado nenhuma das opções");
             }// FIM_CONDICIONAL
-        }// FIM_FOR
+        }// FIM_LOOP
+
+        //EXIBE SAIDA
         System.out.print("\n\n\n");
         System.out.println("Tipo        Perimetro   Area    Centro");
         System.out.println("------------------------------------------");
