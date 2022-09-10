@@ -12,15 +12,9 @@ public class Triangulo extends Figura2D{
         v1=ver1;
         v2=ver2;
         v3=ver3;
-    }
-
-    @Override 
-    public Ponto2D calculaCG() {
-        //cordenadas médias
         double x=(v1.getX()+v2.getX()+v3.getX())/3;
         double y=(v1.getY()+v2.getY()+v3.getY())/3;
         setCentroG(new Ponto2D(x, y));
-        return  getCentroG();
     }
 
     @Override 

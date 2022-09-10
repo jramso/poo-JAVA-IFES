@@ -16,16 +16,12 @@ public abstract class Figura2D{
     /** Metodo para retornar a area de uma figura plana 
      * @return double - area; */
 
-    public double calculaArea(){
-        return 0;
-    }
+    public abstract double calculaArea();
 
     /** Metodo para retornar o perimetro de uma figura plana 
      * @return double - perimetro */
     
-    public double calculaPerimetro(){
-        return 0;
-    }
+    public abstract double calculaPerimetro();
 
     public Ponto2D calculaCG(){ // WRONG!!!!!!!!!!!
         return this.centroG;
