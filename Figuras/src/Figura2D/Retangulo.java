@@ -58,7 +58,7 @@ public class Retangulo extends Figura2D{
     }
     
     public String toString(){
-        return "Vertices:\nV1:"+this.vS1.toString()+"\nV2:"+this.vS2.toString()+"\nV3:"+this.vI3.toString()+"\nV4:"+this.vI4.toString()+"\nCentro de gravidade:"+calculaCG()+"\nArea:{"+calculaArea()+"}\nPerimetro:{"+calculaPerimetro()+"}\n\n";
+        return "Vertices:\nV1:"+this.vS1.toString()+"\nV2:"+this.vS2.toString()+"\nV3:"+this.vI3.toString()+"\nV4:"+this.vI4.toString()+"\nCentro de gravidade:"+getCentroG()+"\nArea:{"+calculaArea()+"}\nPerimetro:{"+calculaPerimetro()+"}\n\n";
     }
 
 }
