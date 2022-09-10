@@ -23,6 +23,7 @@ public abstract class Figura2D{
     
     public abstract double calculaPerimetro();
 
+
     /** 
      * Metodos Getters and Setters
      */

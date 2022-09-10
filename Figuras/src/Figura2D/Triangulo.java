@@ -34,12 +34,10 @@ public class Triangulo extends Figura2D{
     
 
     public boolean triaRetangulo(){
-        double lado1=v1.distancia(v2);
-        double lado2=v2.distancia(v3);
-        double lado3=v1.distancia(v3);
-        System.out.println(lado1);
-        System.out.println(lado2);
-        System.out.println(lado3);
+        //a precisao double dava erro por ser muito grande
+        float lado1=v1.distancia(v2);
+        float lado2=v2.distancia(v3);
+        float lado3=v1.distancia(v3);
         if (lado1>lado2 && lado1>lado3){
             return (lado1*lado1)==(lado2*lado2)+(lado3*lado3);
         }else if(lado2>lado3 && lado2>lado1){
