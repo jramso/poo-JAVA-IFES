@@ -9,12 +9,17 @@ public class Playlist {
     private int segundo;
     ArrayList<Conteudo> pList;
     
-    public Playlist(String nomePL,int horas, int min, int sec){
+    public Playlist(String nomePL){
         this.nome=nomePL;
-        this.horas=horas;
-        this.minutos=min;
-        this.segundo=sec;
-        ArrayList<Conteudo> pList = new ArrayList<>();
+        this.horas=0;
+        this.minutos=0;
+        this.segundo=0;
+        this.pList = new ArrayList<>();
+    }
+
+    public ArrayList<Conteudo> addPlaylist(Conteudo ctd){
+        pList.add(ctd);
+        return pList;
     }
 
 

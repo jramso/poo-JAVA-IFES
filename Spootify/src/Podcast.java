@@ -1,3 +1,9 @@
+/**
+ * @author Josue Ramos Souza
+ * @version 1.1
+ * @since 09-13-2022
+ */
+
 public class Podcast extends Conteudo{
     
     private String apresentador;

@@ -1,3 +1,9 @@
+/**
+ * @author Josue Ramos Souza
+ * @version 1.1
+ * @since 09-13-2022
+ */
+
 public abstract class Conteudo {
     private String titulo;
     private int duracao;
@@ -7,6 +13,9 @@ public abstract class Conteudo {
         this.duracao=duracao;
     }
 
+    /*
+     * Getters and Setters
+     */
     public String getTitulo() {
         return titulo;
     }

@@ -1,18 +1,45 @@
-import java.util.ArrayList;
 
+/**
+ * @author Josue Ramos Souza
+ * @version 1.2
+ * @since 09-13-2022
+ */
+
+import java.util.ArrayList;
 public class Musica extends Conteudo{
     
     private String genero;
     private ArrayList<String> compositor;
     private ArrayList<String> interprete;
-    public Musica(String titulo, int duracao, String genero, ArrayList<String> compositor, ArrayList<String> interprete){
+    public Musica(String titulo, int duracao, String genero){
         super(titulo, duracao);
         this.genero=genero;
-        this.compositor=compositor;
-        this.interprete=interprete;
+        this.compositor= new ArrayList<>();
+        this.interprete= new ArrayList<>();
+    }
+
+    /**
+     * @param compo
+     * @return ArrayList<String> - Lista de compositores
+     */
+    public ArrayList<String> addCompositor(String compo){
+        compositor.add(compo);
+        return this.compositor;
+    }
+
+    /**
+     * @param inter
+     * @return ArrayList<String> - Lista de interpretes
+     */
+    public ArrayList<String> addInterprete(String inter){
+        interprete.add(inter);
+        return this.interprete;
     }
 
 
+    /*
+     * Getters and Setters
+     */
     public String getGenero() {
         return genero;
     }
@@ -22,14 +49,9 @@ public class Musica extends Conteudo{
     public ArrayList<String> getCompositor() {
         return compositor;
     }
-    public void setCompositor(ArrayList<String> compositor) {
-        this.compositor = compositor;
-    }
+
     public ArrayList<String> getInterprete() {
         return interprete;
-    }
-    public void setInterprete(ArrayList<String> interprete) {
-        this.interprete = interprete;
     }
 
 }
