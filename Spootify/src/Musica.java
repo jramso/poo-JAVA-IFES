@@ -54,4 +54,12 @@ public class Musica extends Conteudo{
         return interprete;
     }
 
+    /*
+     * ToString
+     */
+
+    public String toString(){
+        return "Nome da Musica: "+getTitulo()+"\nCompositores: "+getCompositor()+"\nGenero Musical: "+getGenero()+"\nInterpretes: "+getInterprete();
+    }
+
 }
