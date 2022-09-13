@@ -7,14 +7,14 @@ public class Playlist {
     private int horas;
     private int minutos;
     private int segundo;
-    ArrayList<Conteudo> Plist;
+    ArrayList<Conteudo> pList;
     
     public Playlist(String nomePL,int horas, int min, int sec){
         this.nome=nomePL;
         this.horas=horas;
         this.minutos=min;
         this.segundo=sec;
-        ArrayList<Conteudo> Plist = new ArrayList<>();
+        ArrayList<Conteudo> pList = new ArrayList<>();
     }
 
 
@@ -23,7 +23,7 @@ public class Playlist {
     }
     public ArrayList<Conteudo> listaMsc(){
         ArrayList<Conteudo> MusLst = new ArrayList<>();
-        for(Conteudo mus:Plist){
+        for(Conteudo mus:pList){
             if(mus.getClass().getSimpleName()=="Musica"){
                 MusLst.add(mus);
             }
@@ -73,15 +73,13 @@ public class Playlist {
 
 
     public ArrayList<Conteudo> getPlist() {
-        return Plist;
+        return pList;
     }
 
 
-    public void setPlist(ArrayList<Conteudo> plist) {
-        Plist = plist;
+    public void setPlist(ArrayList<Conteudo> pList) {
+        pList = pList;
     }
 
 
-
-    gets
 }
