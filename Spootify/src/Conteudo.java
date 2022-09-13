@@ -5,7 +5,6 @@ public abstract class Conteudo {
     public Conteudo(String titulo,int duracao){
         this.titulo=titulo;
         this.duracao=duracao;
-
     }
 
     public String getTitulo() {
