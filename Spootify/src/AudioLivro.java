@@ -11,12 +11,12 @@ public class AudioLivro extends Conteudo{
     private String editora;
     private String narrador;
     private String sinopse;
-    public AudioLivro(String titulo,int duracao,String editora, String narrador,String sinopse, ArrayList<String> autores){
+    public AudioLivro(String titulo,int duracao,String editora, String narrador,String sinopse){
         super(titulo, duracao);
         this.editora=editora;
         this.narrador=narrador;
         this.sinopse=sinopse;
-        this.autor=autores;
+        this.autor=new ArrayList<>();
     }
 
     /**
