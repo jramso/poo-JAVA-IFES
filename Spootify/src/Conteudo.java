@@ -13,6 +13,10 @@ public abstract class Conteudo {
         this.duracao=duracao;
     }
 
+    public Conteudo(String titulo){
+        this.titulo=titulo;
+    }
+
     /*
      * Getters and Setters
      */

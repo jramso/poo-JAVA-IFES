@@ -11,8 +11,8 @@ public class AudioLivro extends Conteudo{
     private String editora;
     private String narrador;
     private String sinopse;
-    public AudioLivro(String titulo,int duracao,String editora, String narrador,String sinopse){
-        super(titulo, duracao);
+    public AudioLivro(String titulo,String editora, String narrador,String sinopse){
+        super(titulo);
         this.editora=editora;
         this.narrador=narrador;
         this.sinopse=sinopse;

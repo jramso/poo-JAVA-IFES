@@ -48,6 +48,24 @@ public class Spootify {
                 myList.addPlaylist(msc);
 
             }else if(selectedValue=="AudioLivro"){
+                System.out.println("Nome do Livro:");
+                String title=ler.nextLine();
+                System.out.println("Nome da Editora:");
+                String editor=ler.nextLine();
+                System.out.println("Nome do Narrador:");
+                String caster=ler.nextLine();
+                System.out.println("Sinopse(resumo):");
+                String sinopse=ler.nextLine();
+                ler.nextLine();
+                System.out.println("Quantidade de autores:");
+                int qtd= ler.nextInt();
+                ler.nextLine();
+                book=new AudioLivro(title, editor, caster, sinopse);
+                for(int i=0;i<qtd;i++){
+                    System.out.println("Nome do autor "+(i+1)+":");
+                    book.addAutor(ler.nextLine());
+                }
+                myList.addPlaylist(book);
 
             }else if(selectedValue=="Podcast"){
 
