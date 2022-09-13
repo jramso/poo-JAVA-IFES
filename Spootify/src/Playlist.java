@@ -18,9 +18,31 @@ public class Playlist {
     }
 
 
-    public int calcTempo(){
-        return 0;
+    public void calcTempo(){
+        int sec=0;
+        for(Conteudo cont:pList){
+            sec=sec+cont.getDuracao();
+        }
+        int min=0;
+        int hor=0;
+        while(sec>=60){
+            min++;
+            if (min>0){
+                sec=sec-60;
+                if(min>=60){
+                    hor++;
+                    if(hor>0){
+                        min=min-60;
+                    }
+                }
+            }
+        }
+        setHoras(hor);
+        setMinutos(min);
+        setSegundo(sec);
     }
+
+
     public ArrayList<Conteudo> listaMsc(){
         ArrayList<Conteudo> MusLst = new ArrayList<>();
         for(Conteudo mus:pList){
@@ -77,8 +99,8 @@ public class Playlist {
     }
 
 
-    public void setPlist(ArrayList<Conteudo> pList) {
-        pList = pList;
+    public void setPlist(ArrayList<Conteudo> List) {
+        this.pList = List;
     }
 
 
