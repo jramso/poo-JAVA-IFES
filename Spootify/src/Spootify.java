@@ -16,6 +16,7 @@ public class Spootify {
         Musica msc;
         AudioLivro book;
         Podcast pod;
+
         //valores possiveis para o select
         Object[] possibleValues = { "Musica", "AudioLivro", "Podcast" }; 
         Object selectedValue ="";
@@ -40,7 +41,7 @@ public class Spootify {
                 int qtd= ler.nextInt();
                 ler.nextLine();//limpa o buffer
                 for(int i=0;i<qtd;i++){
-                    System.out.println("Informe o compositor"+i);
+                    System.out.println("Informe o compositor "+(i+1));
                     msc.addCompositor(ler.nextLine());
                 }
                 ler.nextLine();//limpa o buffer
@@ -48,7 +49,7 @@ public class Spootify {
                 qtd=ler.nextInt();
                 ler.nextLine();//limpa o buffer
                 for(int i=0;i<qtd;i++){
-                    System.out.println("Informe o interprete"+i);
+                    System.out.println("Informe o interprete "+(i+1));
                     msc.addInterprete(ler.nextLine());
                 }
                 myList.addPlaylist(msc);
@@ -92,7 +93,7 @@ public class Spootify {
                 myList.addPlaylist(pod);
             }//FIM_CONDICIONAL
         }//FIM_LOOP
-        ler.close();
+        ler.close(); //FECHANDO O SCANNER (System.in)
 
 
         /**
