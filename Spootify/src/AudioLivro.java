@@ -11,8 +11,8 @@ public class AudioLivro extends Conteudo{
     private String editora;
     private String narrador;
     private String sinopse;
-    public AudioLivro(String titulo,String editora, String narrador,String sinopse){
-        super(titulo);
+    public AudioLivro(String titulo,int duracao,String editora, String narrador,String sinopse){
+        super(titulo,duracao);
         this.editora=editora;
         this.narrador=narrador;
         this.sinopse=sinopse;
@@ -53,6 +53,11 @@ public class AudioLivro extends Conteudo{
     }
     public void setSinopse(String sinopse) {
         this.sinopse = sinopse;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+"\nEditora: "+getEditora()+"\nNarrador: "+getNarrador()+"\nSinopse:"+getSinopse();
     }
 
 }

@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 
+/**
+ * @author Jramso
+ * @version 2.1
+ * @since 09-13-2022
+ */
 public class Playlist {
     
 
@@ -22,27 +27,40 @@ public class Playlist {
         this.book=new ArrayList<>();
         this.pod=new ArrayList<>();
     }
-
+    
+    /**
+     * @param ctd
+     * @return pList - Retorna a PLAYLIST e preenche a lista (musicas) de musicas
+     */
     public ArrayList<Conteudo> addPlaylist(Musica ctd){
         musicas.add(ctd);
         pList.add(ctd);
         return pList;
     }
     
+    /**
+     * @param ctd
+     * @return pList - Retorna a PLAYLIST e preenche a lista (AudioLivro) de AudioLivros
+     */
     public ArrayList<Conteudo> addPlaylist(AudioLivro ctd){
         book.add(ctd);
         pList.add(ctd);
         return pList;
     }
     
+    /**
+     * @param ctd
+     * @return pList - Retorna a PLAYLIST e preenche a lista (Pod) de Podcast
+     */
     public ArrayList<Conteudo> addPlaylist(Podcast ctd){
         pod.add(ctd);
         pList.add(ctd);
         return pList;
     }
     
-
-
+    /**
+     * @see getDuracao 
+     */
     public void calcTempo(){
         int sec=0;
         for(Conteudo cont:pList){
@@ -68,15 +86,6 @@ public class Playlist {
     }
 
 
-    // public ArrayList<Conteudo> listaMsc(){
-    //     ArrayList<Conteudo> MusLst = new ArrayList<>();
-    //     for(Conteudo mus:pList){
-    //         if(mus.getClass().getSimpleName()=="Musica"){
-    //             MusLst.add(mus);
-    //         }
-    //     }
-    //     return MusLst;
-    // }
 
     /**
      * @return String - duracao da playlist
@@ -88,6 +97,8 @@ public class Playlist {
         }
         return getMinutos()+"min "+getSegundo()+"s";
     }
+
+
     /*
      * Getters and Setters
      */
@@ -151,6 +162,11 @@ public class Playlist {
 
     public ArrayList<Podcast> getPod() {
         return pod;
+    }
+
+    @Override
+    public String toString() {
+        return "Nome da PLAYLIST: "+getNome()+"\nDuração:"+duracaoPL()+"\n-----------";
     }
 
 

@@ -34,4 +34,9 @@ public class Podcast extends Conteudo{
         this.descricao = descricao;
     }
 
+    @Override
+    public String toString() {
+        return super.toString()+"\nApresentador:"+getApresentador()+"\nTema:"+getTema()+"\nDescricao:"+getDescricao();
+    }
+
 }

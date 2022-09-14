@@ -3,6 +3,12 @@ import java.util.Scanner;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
+/**
+ * @author Jramso
+ * @version 1.7
+ * @since 09-13-2022
+ */
+
 public class Spootify {
     public static void main(String[] args) {
         // Playlist
@@ -56,11 +62,13 @@ public class Spootify {
                 String caster=ler.nextLine();
                 System.out.println("Sinopse(resumo):");
                 String sinopse=ler.nextLine();
-                ler.nextLine();
+                ler.nextLine();//limpa o buffer
+                System.out.println("tempo em segundos do AudioLivro:");
+                int time= ler.nextInt();
                 System.out.println("Quantidade de autores:");
                 int qtd= ler.nextInt();
-                ler.nextLine();
-                book=new AudioLivro(title, editor, caster, sinopse);
+                ler.nextLine();//limpa o buffer
+                book=new AudioLivro(title,time, editor, caster, sinopse);
                 for(int i=0;i<qtd;i++){
                     System.out.println("Nome do autor "+(i+1)+":");
                     book.addAutor(ler.nextLine());
@@ -68,33 +76,73 @@ public class Spootify {
                 myList.addPlaylist(book);
 
             }else if(selectedValue=="Podcast"){
+                System.out.println("Nome do Podcast:");
+                String title=ler.nextLine();
+                System.out.println("Nome do apresentador:");
+                String host=ler.nextLine();
+                System.out.println("Tema do Podcast:");
+                String tema=ler.nextLine();
+                System.out.println("Resenha do Podcast:");
+                String desc=ler.nextLine();
+                ler.nextLine();//limpa o buffer
+                System.out.println("Duracao do episodio em segundos");
+                int time = ler.nextInt();
+                ler.nextLine();//limpa o buffer
+                pod=new Podcast(title, time, host, tema, desc);
+                myList.addPlaylist(pod);
+            }//FIM_CONDICIONAL
+        }//FIM_LOOP
+        ler.close();
 
-            }
-            ler.close();
-            
-        }
 
-
-
-        // inserçao manual de musica
-        msc = new Musica("Vento", 135, "Trap Brasileiro");
-        msc.addCompositor("Dudu");
-        msc.addCompositor("VK Mac");
-        msc.addInterprete("VK Mac");
-        msc.addInterprete("Dudu");
-
-
-        myList.addPlaylist(msc);
-
-        /*
-         * Exibe Lista de Musicas
+        /**
+         * Exibe Listas geradas da playlist
          */
-        int x=0;
-        for(Musica mus:myList.getMusicas()){
-            System.out.println("        Musica "+(x+1)+":");
-            System.out.println(mus);
-            System.out.println("-------------------------------");
-            x++;
+        Object [] possibleValues2 = { "Musica", "AudioLivro", "Podcast","Playlist" };
+        selectedValue="";
+        while (selectedValue !=null){
+            selectedValue = JOptionPane.showInputDialog(null,"Exibir Lista de", "Spootify",JOptionPane.INFORMATION_MESSAGE, new ImageIcon("Spootify/img/Spotiify_ico.png"),possibleValues2, possibleValues2[0]);
+            
+            if(selectedValue=="Musica"){
+                //Exibe Lista de Musicas
+                System.out.println("----------------------\n       LISTA DE "+selectedValue+"\n-------------------");
+                int x=0;
+                for(Musica mus:myList.getMusicas()){
+                    System.out.println("\n-----------"+mus.getClass().getSimpleName()+" "+(x+1)+":-------");
+                    System.out.println(mus.toString());
+                    System.out.println("-------------------------------");
+                    x++;
+                }
+                
+            }else if(selectedValue=="AudioLivro"){
+                System.out.println("--------------------\n       LISTA DE "+selectedValue+"\n----------------");
+                int x=0;
+                for(AudioLivro books:myList.getBook()){
+                    System.out.println("\n----------"+books.getClass().getSimpleName()+" "+(x+1)+":----------");
+                    System.out.println(books.toString());
+                    System.out.println("-------------------------------");
+                    x++;
+                }
+                
+            }else if(selectedValue=="Podcast"){
+                System.out.println("---------------------\n    LISTA DE"+selectedValue+"\n-----------------");
+                int x=0;
+                for(Podcast pode:myList.getPod()){
+                    System.out.println("\n--------"+pode.getClass().getSimpleName()+" "+(x+1)+":-------------");
+                    System.out.println(pode.toString());
+                    System.out.println("-------------------------------");
+                    x++;
+                }
+                
+            }else if(selectedValue=="Playlist"){
+                System.out.println("\n---------- "+myList+" -------------");
+                for(Conteudo cont:myList.getPlist()){
+                    System.out.println(cont.toString());
+                    System.out.println("\n-----------------------------------------");
+                }
+            }
         }
-    }
-}
+
+
+    }//FIM_MAIN
+}//FIM_CLASSE
