@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  * @author Jramso
  * @version 1.7
@@ -14,20 +17,17 @@ public class Spootify {
         AudioLivro book;
         Podcast pod;
 
-    
-        String selectedValue="";
-        String possibleValues[] = {"Musica","AudioLivro","Podcast"};
-        int cod=-1;
+        //valores possiveis para o select
+        Object[] possibleValues = { "Musica", "AudioLivro", "Podcast" }; 
+        Object selectedValue ="";
 
         //Leitura do teclado
         Scanner ler = new Scanner(System.in);
         
         //valores selecionados != cancelar
-        System.out.println("----- BEM VINDO AO SPOOTIFY -----\n --- ADICIONE UM CONTEÚDO A SUA PLAYLIST ---");
-        System.out.println("DIGITE 1 PARA MUSICA\nDIGITE 2 PARA AUDIOLIVROS\nDIGITE 3 PARA PODCAST\nDIGITE 0 PARA SAIR");
-        cod=ler.nextInt();ler.nextLine();
-        while (cod !=0){
-            selectedValue=(cod>0 && cod<3)?possibleValues[cod-1]:"";
+        while (selectedValue !=null){
+            selectedValue = JOptionPane.showInputDialog(null,"Escolha o tipo de Conteúdo", "Spootify",JOptionPane.INFORMATION_MESSAGE, new ImageIcon("Spootify/img/Spotiify_ico.png"),possibleValues, possibleValues[0]);
+
             if(selectedValue=="Musica"){
                 System.out.println("Nome da Musica:");
                 String title=ler.nextLine();
@@ -92,26 +92,18 @@ public class Spootify {
                 pod=new Podcast(title, time, host, tema, desc);
                 myList.addPlaylist(pod);
             }//FIM_CONDICIONAL
-            System.out.println("----- BEM VINDO AO SPOOTIFY -----\n --- ADICIONE UM CONTEÚDO A SUA PLAYLIST ---");
-            System.out.println("DIGITE 1 PARA MUSICA\nDIGITE 2 PARA AUDIOLIVROS\nDIGITE 3 PARA PODCAST\nDIGITE 0 PARA SAIR");
-            cod=ler.nextInt();ler.nextLine();
         }//FIM_LOOP
-        //ler.close(); //FECHANDO O SCANNER (System.in)
+        ler.close(); //FECHANDO O SCANNER (System.in)
 
 
-        
         /**
          * Exibe Listas geradas da playlist
          */
-        
-
-        cod=-1;
-        String possibleValues2[]={"Musica","AudioLivro","Podcast","Playlist"};
-        System.out.println("+++++ BEM VINDO A PLAYLIST +++++\n --- EXIBA UM CONTEÚDO DA SUA PLAYLIST ---");
-        System.out.println("DIGITE 1 PARA MUSICA\nDIGITE 2 PARA AUDIOLIVROS\nDIGITE 3 PARA PODCAST\nDIGITE 4 PARA EXIBIR TODA A PLAYLIST\nDIGITE 0 PARA SAIR");
-        cod=ler.nextInt();ler.nextLine();
-        while (cod!=0){
-            selectedValue=(cod>0 && cod<5)?possibleValues2[cod-1]:"";
+        Object [] possibleValues2 = { "Musica", "AudioLivro", "Podcast","Playlist" };
+        selectedValue="";
+        while (selectedValue !=null){
+            selectedValue = JOptionPane.showInputDialog(null,"Exibir Lista de", "Spootify",JOptionPane.INFORMATION_MESSAGE, new ImageIcon("Spootify/img/Spotiify_ico.png"),possibleValues2, possibleValues2[0]);
+            
             if(selectedValue=="Musica"){
                 //Exibe Lista de Musicas
                 System.out.println("----------------------\n       LISTA DE "+selectedValue+"\n-------------------");
@@ -150,11 +142,8 @@ public class Spootify {
                     System.out.println("\n-----------------------------------------");
                 }
             }
-            System.out.println("+++++ BEM VINDO A PLAYLIST +++++\n --- EXIBA UM CONTEÚDO DA SUA PLAYLIST ---");
-            System.out.println("DIGITE 1 PARA MUSICA\nDIGITE 2 PARA AUDIOLIVROS\nDIGITE 3 PARA PODCAST\nDIGITE 4 PARA EXIBIR TODA A PLAYLIST\nDIGITE 0 PARA SAIR");
-            cod=ler.nextInt();ler.nextLine();
         }
-        ler.close();
+
 
     }//FIM_MAIN
 }//FIM_CLASSE
