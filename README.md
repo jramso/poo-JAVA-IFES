@@ -12,3 +12,6 @@ Atividades e exercícios da disciplina de POO - Ifes Campus Serra
 ## Lista 2:
 - [5: Figuras: Cria um conjunto de figuras 2D (Circulos, Triangulos e Retangulo)](Figuras)
 - [6: Eletronics: Cria um conjunto de eletronicos (Smartphone, Tel fixo, Fone de ouvido, Cx. de som)](Eletronics)
+## Lista 3:
+- [7: Spootify: Cria um modelo semelhante a um Spotify (Musicas,podcasts e audiolivros)](Spootify)
+- 

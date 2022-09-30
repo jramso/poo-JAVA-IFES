@@ -13,11 +13,11 @@ public class Spootify {
         Musica msc;
         AudioLivro book;
         Podcast pod;
+        int cod;
 
     
         String selectedValue="";
         String possibleValues[] = {"Musica","AudioLivro","Podcast"};
-        int cod=-1;
 
         //Leitura do teclado
         Scanner ler = new Scanner(System.in);
@@ -38,14 +38,13 @@ public class Spootify {
                 int time = ler.nextInt();
                 msc = new Musica(title, time, styles);
                 System.out.println("Informe a quantidade de compositores:");
-                int qtd= ler.nextInt();
-                ler.nextLine();//limpa o buffer
+                int qtd= ler.nextInt();ler.nextLine();//limpa o buffer
                 for(int i=0;i<qtd;i++){
                     System.out.println("Informe o compositor "+(i+1));
                     msc.addCompositor(ler.nextLine());
                 }
-                ler.nextLine();//limpa o buffer
                 System.out.println("Informe a quantidade de interpretes:");
+                ler.nextLine();//limpa o buffer
                 qtd=ler.nextInt();
                 ler.nextLine();//limpa o buffer
                 for(int i=0;i<qtd;i++){
@@ -96,9 +95,6 @@ public class Spootify {
             System.out.println("DIGITE 1 PARA MUSICA\nDIGITE 2 PARA AUDIOLIVROS\nDIGITE 3 PARA PODCAST\nDIGITE 0 PARA SAIR");
             cod=ler.nextInt();ler.nextLine();
         }//FIM_LOOP
-        //ler.close(); //FECHANDO O SCANNER (System.in)
-
-
         
         /**
          * Exibe Listas geradas da playlist
