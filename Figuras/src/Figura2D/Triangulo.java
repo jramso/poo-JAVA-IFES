@@ -21,6 +21,18 @@ public class Triangulo extends Figura2D{
         this.lado1=v1.distancia(v2);
         this.lado2=v2.distancia(v3);
         this.lado3=v1.distancia(v3);
+        try{
+            if((this.lado1+this.lado2)<this.lado3){
+                throw new ArithmeticException();
+            }else if((this.lado2+this.lado3)>this.lado1){
+                throw new ArithmeticException();
+            }
+            System.out.println("passou");
+        }catch(Exception e){
+
+        }finally{
+
+        }
     }
 
     @Override 
