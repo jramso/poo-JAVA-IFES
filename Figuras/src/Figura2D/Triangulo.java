@@ -6,6 +6,9 @@ public class Triangulo extends Figura2D{
     Ponto2D v1;
     Ponto2D v2;
     Ponto2D v3;
+    float lado1;
+    float lado2;
+    float lado3;
 
     public Triangulo(Ponto2D ver1,Ponto2D ver2,Ponto2D ver3){
         super();
@@ -15,6 +18,9 @@ public class Triangulo extends Figura2D{
         double x=(v1.getX()+v2.getX()+v3.getX())/3;
         double y=(v1.getY()+v2.getY()+v3.getY())/3;
         setCentroG(new Ponto2D(x, y));
+        this.lado1=v1.distancia(v2);
+        this.lado2=v2.distancia(v3);
+        this.lado3=v1.distancia(v3);
     }
 
     @Override 
@@ -35,9 +41,7 @@ public class Triangulo extends Figura2D{
 
     public boolean triaRetangulo(){
         //a precisao double dava erro por ser muito grande
-        float lado1=v1.distancia(v2);
-        float lado2=v2.distancia(v3);
-        float lado3=v1.distancia(v3);
+
         if (lado1>lado2 && lado1>lado3){
             return (lado1*lado1)==(lado2*lado2)+(lado3*lado3);
         }else if(lado2>lado3 && lado2>lado1){
