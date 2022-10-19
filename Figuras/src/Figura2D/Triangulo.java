@@ -9,11 +9,12 @@ public class Triangulo extends Figura2D{
     float lado1;
     float lado2;
     float lado3;
-
+    
+    boolean dist; 
     public Triangulo(Ponto2D ver1,Ponto2D ver2,Ponto2D ver3) throws Exception{
         super();
         try{
-            boolean dist= ver1.distancia(ver2)+ver1.distancia(ver3)>ver2.distancia(ver3);
+            dist=ver1.distancia(ver2)+ver1.distancia(ver3)>ver2.distancia(ver3);
             dist= v2.distancia(ver3)+ver2.distancia(v1)>ver1.distancia(ver3);
             dist= ver3.distancia(ver2)+ver3.distancia(ver1)>ver1.distancia(ver2);
             
