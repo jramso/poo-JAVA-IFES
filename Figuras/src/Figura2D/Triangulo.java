@@ -6,6 +6,9 @@ public class Triangulo extends Figura2D{
     Ponto2D v1;
     Ponto2D v2;
     Ponto2D v3;
+    float lado1;
+    float lado2;
+    float lado3;
 
     public Triangulo(Ponto2D ver1,Ponto2D ver2,Ponto2D ver3) throws Exception{
         super();
@@ -22,7 +25,7 @@ public class Triangulo extends Figura2D{
             setCentroG(new Ponto2D(x, y));
             
         }catch(Exception e){
-            throw new Exception(ver1+", "+ver2+", "+ver3+" Não formam um triangulo");
+            throw new Exception(ver1+", "+ver2+", "+ver3+" Não formam um triangulo.");
         }
     }
     @Override 
