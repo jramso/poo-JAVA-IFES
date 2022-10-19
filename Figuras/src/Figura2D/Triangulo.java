@@ -7,16 +7,24 @@ public class Triangulo extends Figura2D{
     Ponto2D v2;
     Ponto2D v3;
 
-    public Triangulo(Ponto2D ver1,Ponto2D ver2,Ponto2D ver3){
+    public Triangulo(Ponto2D ver1,Ponto2D ver2,Ponto2D ver3) throws Exception{
         super();
-        v1=ver1;
-        v2=ver2;
-        v3=ver3;
-        double x=(v1.getX()+v2.getX()+v3.getX())/3;
-        double y=(v1.getY()+v2.getY()+v3.getY())/3;
-        setCentroG(new Ponto2D(x, y));
+        try{
+            boolean dist= ver1.distancia(ver2)+ver1.distancia(ver3)>ver2.distancia(ver3);
+            dist= v2.distancia(ver3)+ver2.distancia(v1)>ver1.distancia(ver3);
+            dist= ver3.distancia(ver2)+ver3.distancia(ver1)>ver1.distancia(ver2);
+            
+            v1=ver1;
+            v2=ver2;
+            v3=ver3;
+            double x=(v1.getX()+v2.getX()+v3.getX())/3;
+            double y=(v1.getY()+v2.getY()+v3.getY())/3;
+            setCentroG(new Ponto2D(x, y));
+            
+        }catch(Exception e){
+            throw new Exception(ver1+", "+ver2+", "+ver3+" Não formam um triangulo");
+        }
     }
-
     @Override 
     public double calculaPerimetro() {
         //soma dos lados
@@ -35,6 +43,7 @@ public class Triangulo extends Figura2D{
 
     public boolean triaRetangulo(){
         //a precisao double dava erro por ser muito grande
+
         float lado1=v1.distancia(v2);
         float lado2=v2.distancia(v3);
         float lado3=v1.distancia(v3);

@@ -24,7 +24,7 @@ public class TestaFigPlana2 {
                     double y1=Double.parseDouble(y);
                     v1[i]= new Ponto2D(x1, y1);
                 }
-                lista.add(new Triangulo(v1[0], v1[1], v1[2]));
+               // lista.add(new Triangulo(v1[0], v1[1], v1[2]));
 
             }else if(selectedValue=="Circulo"){
                 String x= JOptionPane.showInputDialog(null, "Informe o X do centro do circulo:");
