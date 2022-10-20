@@ -7,12 +7,12 @@ public class TestFigPlana1 {
         Ponto2D v4 = new Ponto2D(8, 1);
         Ponto2D ponto = new Ponto2D(4,2);
         
-        // Retangulo ret = new Retangulo(v1, v4);
-        // System.out.println("RETANGULO");
-        // System.out.println(ret);
-        // System.out.print("É um quadrado? "); System.out.print(ret.quadrado()?"sim\n":"não\n");
-        // System.out.print("o ponto: "+ponto.toString()+" Pertence ao retangulo? "); System.out.printf(ret.pertence(ponto)?"sim":"nao");
-        // System.out.print("\n\n");
+        Retangulo ret = new Retangulo(v1, v4);
+        System.out.println("RETANGULO");
+        System.out.println(ret);
+        System.out.print("É um quadrado? "); System.out.print(ret.quadrado()?"sim\n":"não\n");
+        System.out.print("o ponto: "+ponto.toString()+" Pertence ao retangulo? "); System.out.printf(ret.pertence(ponto)?"sim":"nao");
+        System.out.print("\n\n");
         // triangulo
         try{
             System.out.println("TRIANGULO");
