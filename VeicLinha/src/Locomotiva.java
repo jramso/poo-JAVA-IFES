@@ -41,7 +41,6 @@ public class Locomotiva extends VeicLinha{
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
         return "Matricula Locomotiva:{"+this.numMatric+"}\nPotencia:{"+this.potMax+"}\nPeso suportado:{"+this.desloc+"}\n"+super.toString();
     }
 }
