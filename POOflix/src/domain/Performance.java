@@ -7,7 +7,7 @@ public class Performance {
 
     }
     /* 
-    public int getidep();
+    public int getEp();
     public int getidepers();
     public Ator getAtor();
 
