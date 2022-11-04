@@ -19,8 +19,22 @@ public class CDUMain{
     }
 
     public void execCadSerie(){
-        
+
     }
+
+    public void processaOpcao(String opcao){
+        switch(opcao){
+            case "1": 
+                execCadSerie();
+                break;
+            case "2":
+                execCadEpisodio();
+                break;
+            default:
+                System.out.println("Opção inválida");
+                break;
+        }
+    };
 
 
 }
