@@ -12,4 +12,25 @@ public class Episodio{
         this.titulo=title;
     }
 
+    public int getId(){
+        return this.id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+
+    public String getResumo() {
+        return resumo;
+    }
+
+    public void setResumo(String resumo) {
+        this.resumo = resumo;
+    }
+
+    public int getTemporada() {
+        return temporada;
+    }
+
 }
