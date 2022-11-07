@@ -34,7 +34,12 @@ public class TestaFigPlana2 {
                 String r= JOptionPane.showInputDialog(null, "Informe o raio do circulo: ");
                 double raio=Double.parseDouble(r);
                 Ponto2D cg = new Ponto2D(x1, y1);
-                lista.add(new Circulo(cg,raio));
+                try {
+                    lista.add(new Circulo(cg,raio));
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
 
             }else if(selectedValue=="Retangulo"){
                 Ponto2D[] ver=new Ponto2D[2];
@@ -45,7 +50,12 @@ public class TestaFigPlana2 {
                     double y1=Double.parseDouble(y);
                     ver[i]= new Ponto2D(x1, y1);
                 }
-                lista.add(new Retangulo(ver[0],ver[1]));
+                try {
+                    lista.add(new Retangulo(ver[0],ver[1]));
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             }else{
                 JOptionPane.showMessageDialog(null,"Erro ao escolher! Não foi selecionado nenhuma das opções");
             }// FIM_CONDICIONAL
