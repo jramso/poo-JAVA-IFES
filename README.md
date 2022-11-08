@@ -108,10 +108,14 @@ Atividades e exercícios da disciplina de POO</p>
 
 
     Personagem "1..*" -- p 
-    p -- "1..*" Episodio
+    p  -- "1..*" Episodio
     Serie "1" o-- "*" Episodio
     Categoria "0"  -- "*" Serie
     Ator "1" -- "*" Perfomance
     Perfomance .. p
 
 ```
+```diff
+- p (não é uma classe o diagrama nao faz classes associativas)
+```
+
