@@ -1,7 +1,8 @@
-# Programação Orientada a Objetos com Java <img src="https://s2.glbimg.com/twoewJmwpMgtGPcRPP8SxFlDVmM=/0x0:695x393/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/P/f/y52r4ySZWLkJjEhKLhgw/2014-11-14-java-logo.jpg" width="60px" Style="border-radius:10px;"></img>
+# Programação Orientada a Objetos com Java <img src="https://s2.glbimg.com/twoewJmwpMgtGPcRPP8SxFlDVmM=/0x0:695x393/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/P/f/y52r4ySZWLkJjEhKLhgw/2014-11-14-java-logo.jpg" width="60px" style="border-radius:10px;"></img>
 
 
-<center>Atividades e exercícios da disciplina de POO
+<center>
+Atividades e exercícios da disciplina de POO</center>
 
 <div>
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Marca_do_Ifes_vers%C3%A3o_2015.jpg" Style="border-radius:20px;"></img>
@@ -9,7 +10,7 @@
 Ifes Campus Serra
 
 @Jramso - `Josué Ramos Souza` - 4ºPeríodo
-</center>
+
 
 <details>
     <Summary><strong style="font-size:1.5rem; color:LightSkyBlue;">Lista 1</strong>
