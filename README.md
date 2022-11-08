@@ -69,18 +69,19 @@ Atividades e exercícios da disciplina de POO</p>
         + getid(): int
     }
 
-    class Perfomance{
-        + Perfomance(idep, idpers, ator): constructor
-        + getEp(): Episodio
-        + getPerson(): Personagem
-        + getAtor: Ator
-    }
 
     class Serie{
         - id: int
         - titulo: String
         - idade: int
         + Serie(id,titulo,idade): constructor
+    }
+
+    class Perfomance{
+        + Perfomance(idep, idpers, ator): constructor
+        + getEp(): Episodio
+        + getPerson(): Personagem
+        + getAtor: Ator
     }
 
     class Categoria{
@@ -107,7 +108,8 @@ Atividades e exercícios da disciplina de POO</p>
 
 
     Personagem "1..*" -- "1..*" Episodio : participa
-    Serie "1" --o "*" Episodio
-    
+    Serie "1" o-- "*" Episodio
+    Categoria "0"  -- "*" Serie
+    Ator "1" -- "*" Personagem
 
 ```
