@@ -48,9 +48,9 @@ Atividades e exercícios da disciplina de POO</p>
 - [9: POOFlix: Cria um "modelo de Netflix"](POOflix)
 
 - Diagrama de classe
-```mermaid
+```
 
-    classDiagram
+    @startuml POOflixDiagram
     
     class Personagem{
         - id: int
@@ -76,6 +76,5 @@ Atividades e exercícios da disciplina de POO</p>
         + getAtor: Ator
     }
 
-    Personagem "1" --o "*" Episodio : participa
-    Perfomance,Episodio -- Perfomance
+    @enduml
 ```
