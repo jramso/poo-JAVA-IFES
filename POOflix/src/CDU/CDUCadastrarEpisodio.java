@@ -1,13 +1,13 @@
 package POOflix.src.CDU;
 import POOflix.src.domain.Episodio;
 
-public class CadastrarEpisodio {
+public class CDUCadastrarEpisodio {
  
     
     private Episodio episodio;
     private Episodio formEpisodio;
 
-    public CDUcadastrarEpisodio(FormEpisodio formEpisodio){
+    public CDUCadastrarEpisodio(FormEpisodio formEpisodio){
         this.formEpisodio = FormEpisodio;
         this.formEpisodio.setcdu(this);
     }
