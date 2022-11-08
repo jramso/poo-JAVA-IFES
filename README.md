@@ -68,4 +68,14 @@ Atividades e exercícios da disciplina de POO</p>
         + Episodio(id,temp,titulo): constructor
         + getid(): int
     }
+
+    class Perfomance{
+        + Perfomance(idep, idpers, ator): constructor
+        + getEp(): Episodio
+        + getPerson(): Personagem
+        + getAtor: Ator
+    }
+
+    Personagem "1" --o "*" Episodio : participa
+    Perfomance "" --o "" participa
 ```
