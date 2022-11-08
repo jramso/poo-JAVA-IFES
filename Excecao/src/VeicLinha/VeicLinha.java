@@ -9,16 +9,23 @@ public abstract class VeicLinha {
     private double pesoMax;
     private double carga;
 
-    public VeicLinha(double peso2, double largura2, double altura2, double comprimento2, double pesoMax2, double carga){
-        peso=peso2;
-        largura=largura2;
-        altura=altura2;
-        comprimento=comprimento2;
-        pesoMax=pesoMax2;
-        this.carga=carga;
+    public VeicLinha(double peso2, double largura2, double altura2, double comprimento2, double pesoMax2, double carga)throws Exception{
+        if(peso2<0 || largura2<0 || altura2 <0 || comprimento2<0 || pesoMax2<0||carga<0){
+            throw new Exception("dados numericos nao podem ser negativos");
+        }else{
+            peso=peso2;
+            largura=largura2;
+            altura=altura2;
+            comprimento=comprimento2;
+            pesoMax=pesoMax2;
+            this.carga=carga;
+        }
     };
 
-    public  double calcularPesoTotal(){
+    public  double calcularPesoTotal() throws Exception{
+        if(this.peso+this.carga >this.pesoMax){
+            throw new Exception("Excesso de carga");
+        }
         return this.peso+this.carga;
     }
 
@@ -29,6 +36,7 @@ public abstract class VeicLinha {
         return peso;
     }
     public void setPeso(double peso) {
+
         this.peso = peso;
     }
     public double getLargura() {
