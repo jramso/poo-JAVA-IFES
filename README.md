@@ -111,6 +111,6 @@ Atividades e exercícios da disciplina de POO</p>
     Serie "1" o-- "*" Episodio
     Categoria "0"  -- "*" Serie
     Ator "1" -- "*" Perfomance
-    Perfomance -->> participa
+    Perfomance -- participa
 
 ```
