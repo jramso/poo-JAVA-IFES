@@ -38,7 +38,8 @@ public class Spootify {
                 int time = ler.nextInt();
                 msc = new Musica(title, time, styles);
                 System.out.println("Informe a quantidade de compositores:");
-                int qtd= ler.nextInt();ler.nextLine();//limpa o buffer
+                int qtd= ler.nextInt();
+                ler.nextLine();//limpa o buffer
                 for(int i=0;i<qtd;i++){
                     System.out.println("Informe o compositor "+(i+1));
                     msc.addCompositor(ler.nextLine());
