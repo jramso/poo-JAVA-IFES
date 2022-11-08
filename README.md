@@ -77,5 +77,5 @@ Atividades e exercícios da disciplina de POO</p>
     }
 
     Personagem "1" --o "*" Episodio : participa
-    Perfomance "" -- "" participa
+    Perfomance  --  participa
 ```
