@@ -107,7 +107,8 @@ Atividades e exercícios da disciplina de POO</p>
 
 
 
-    Personagem "1..*" -- "1..*" Episodio : participa
+    Personagem "1..*" -- participa 
+    participa -- "1..*" Episodio
     Serie "1" o-- "*" Episodio
     Categoria "0"  -- "*" Serie
     Ator "1" -- "*" Perfomance
