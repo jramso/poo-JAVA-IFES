@@ -1,5 +1,6 @@
 package POOflix.src.CDU;
 import POOflix.src.domain.Episodio;
+import POOflix.src.UI.FormEpisodio;
 
 public class CDUCadastrarEpisodio {
  
