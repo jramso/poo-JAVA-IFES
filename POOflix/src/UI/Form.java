@@ -1,4 +1,4 @@
-package lab3tier.versao2.ui;
+package POOflix.src.UI;
 
 public abstract class Form {
     public abstract void exibe();    

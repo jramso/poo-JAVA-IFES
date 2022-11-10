@@ -1,30 +1,33 @@
 package POOflix.src.UI;
 
 import java.io.Console;
+import POOflix.src.CDU.*;
 
-public class FormMain {
-    
+public class FormMain extends Form {
+    private CDUMain cdumain = null;
 
-    public void exibe(){
-        Console c = System.console();
-        boolean finish = false;
-        String continuar;
-
-        System.out.println("POOFlix");
-
-        while(!finish){
-            //id=c.readLine();
-            System.out.println("1. Cadastrar Serie");
-            System.out.println("1. Cadastrar Episodio");
-            System.out.println("1. Sair");
-
-            continuar=c.readLine();
-
-            finish = continuar.equals("3");
-
-        }
-        
-
-
+    public void setcdu(CDUMain cdumain){
+        this.cdumain = cdumain;
     }
+
+    public void exibe() {
+        String opcao;
+        Console c = System.console();
+        boolean termina = false;
+
+        System.out.println("POOFlix\n");
+
+        while(!termina){
+            System.out.println("1. Cadastrar Série\n");
+            System.out.println("2. Cadastrar Episódio\n");
+            System.out.println("3. Sair\n");
+
+            opcao = c.readLine("Digite a opção desejada: ");
+
+            termina = opcao.equals("3");
+
+            if(!termina)
+                cdumain.processaOpcao(opcao);
+        }
+    }    
 }

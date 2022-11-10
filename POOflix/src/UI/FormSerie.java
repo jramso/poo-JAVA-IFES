@@ -1,8 +1,7 @@
-package lab3tier.versao2.ui;
+package POOflix.src.UI;
 
 import java.io.Console;
-import lab3tier.versao2.cdu.*;
-
+import POOflix.src.CDU.*;
 public class FormSerie extends Form {
     private String id;
     private String titulo;

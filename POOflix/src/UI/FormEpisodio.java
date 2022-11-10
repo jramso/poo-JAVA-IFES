@@ -1,36 +1,74 @@
 package POOflix.src.UI;
 
 import java.io.Console;
+import POOflix.versao2.cdu.*;
 
-public class FormEpisodio {
-    
+public class FormEpisodio extends Form{
+    private String id;
+    private String idserie;
+    private String temporada;
+    private String titulo;
+    private String resumo;
+    private CDUcadastrarEpis cduce;
 
-    FormEpisodio(){
-        exibe();
-        
+    public void setcdu(CDUcadastrarEpis cduce){
+        this.cduce = cduce;
     }
 
     public void exibe(){
         Console c = System.console();
-        boolean finish = false;
-        String continuar;
+        boolean termina = false;
+        String continuar;     
+        boolean leserie = true;
+        boolean leepisodio = false;  
+        String nomeserie = null;
 
-        System.out.println("Cadastrando um episodio");
+        System.out.println("CADASTRANDO EPISODIO\n");
 
-        while(!finish){
-            //id=c.readLine();
-            System.out.println("1. Cadastrar Serie");
-            System.out.println("1. Cadastrar Episodio");
-            System.out.println("1. Sair");
+        while(!termina){
+            if(leserie){
+                idserie = c.readLine("Qual série?(id): ");
+                nomeserie = cduce.getNomeSerie(Integer.parseInt(idserie));
+                leepisodio = nomeserie != null;
 
-            continuar=c.readLine();
+                if(nomeserie == null) {
+                    System.err.println("!!série não existe !!");
+                    leserie = true;
+                    leepisodio = false;
+                    termina = false; 
+                }
+            }
 
-            finish = continuar.equals("3");
+            if(leepisodio){
+                id = c.readLine("@" + nomeserie + ">ID: ");
+                temporada = c.readLine("@" + nomeserie + ">Temporada: ");
+                titulo = c.readLine("@" + nomeserie + ">Titulo: ");
+                resumo = c.readLine("@" + nomeserie + ">Resumo: ");
 
-        }
-        
+                continuar = c.readLine("(S)erie (E)pisodio (T)erminar): ");
 
+                if(continuar.toLowerCase().equals("s")){
+                    leserie = true;
+                    leepisodio = false;
+                    termina = false;                    
+                }
+                else
+                    if(continuar.toLowerCase().equals("e")){
+                        // salvar episodio no banco de dados.
+                        cduce.salvarEpisodio(); // EM OBRAS.
+                        leserie = false;
+                        leepisodio = true;
+                        termina = false;                    
+                    }
+                    else
+                       termina = true;
+            } // if(episodio)
+        } // while ..
+    } // exibe()
 
-    }
-
-}
+    public String getid() { return id;};
+    public String getidserie() { return idserie;}
+    public String gettemporada() { return temporada;}
+    public String gettitulo() { return titulo;}
+    public String getresumo() { return resumo; }    
+} // class
