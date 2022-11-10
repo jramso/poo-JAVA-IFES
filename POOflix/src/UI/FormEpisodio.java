@@ -1,7 +1,7 @@
 package POOflix.src.UI;
 
 import java.io.Console;
-import POOflix.versao2.cdu.*;
+import POOflix.src.CDU.*;
 
 public class FormEpisodio extends Form{
     private String id;

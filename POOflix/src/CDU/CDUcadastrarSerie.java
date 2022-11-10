@@ -1,8 +1,7 @@
-package lab3tier.versao2.cdu;
+package POOflix.src.CDU;
 
-import lab3tier.versao2.ui.*;
-import lab3tier.versao2.dominio.*;
-
+import POOflix.src.UI.*;
+import POOflix.src.domain.*;
 public class CDUcadastrarSerie  extends CDU {
     private Serie serie;
     private FormSerie formSerie;
