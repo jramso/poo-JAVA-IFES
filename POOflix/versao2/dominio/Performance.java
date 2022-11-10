@@ -1,4 +1,4 @@
-package lab3tier.versao2.dominio;
+package POOflix.versao2.dominio;
 
 public class Performance {
     private Episodio episodio;

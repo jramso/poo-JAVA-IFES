@@ -1,15 +1,29 @@
 package POOflix.src.domain;
 
 public class Performance {
-    
+    private Episodio episodio;
+    private Personagem personagem;
+    private Ator ator;
 
-    public Performance(int idep, int idepers, Ator ator){
+    public Performance(Episodio idep, Personagem idepers, Ator ator){
+        this.episodio=idep;
+        this.personagem=idepers;
+        this.ator=ator;
 
     }
-    /* 
-    public int getEp();
-    public int getidepers();
-    public Ator getAtor();
+    
+    public Episodio getidep(){
+        return episodio;
+    }
 
-    */
+    public Personagem getidperson(){
+        return personagem;
+    }
+
+    public Ator getator(){
+        return ator;
+    }
+    
+
+
 }

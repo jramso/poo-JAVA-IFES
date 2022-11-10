@@ -1,4 +1,4 @@
-package lab3tier.versao2.dominio;
+package POOflix.versao2.dominio;
 
 import java.util.HashMap;
 import java.util.LinkedList;
