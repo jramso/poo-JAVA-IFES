@@ -20,7 +20,7 @@ public class CDUcadastrarSerie  extends CDU {
         String titulo = formSerie.gettitulo();
         int idade = Integer.valueOf(formSerie.getidademin());
 
-        serie = new Serie(id,titulo,idade);
+        serie = new Serie(Integer.parseInt(id),titulo,idade);
 
         //bd.salvarSerie(serie);
         System.out.println("Salvando no banco de dados.." + serie);

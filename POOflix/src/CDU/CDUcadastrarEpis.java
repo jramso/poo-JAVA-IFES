@@ -24,12 +24,13 @@ public class CDUcadastrarEpis extends CDU {
 
     public void salvarEpisodio() {
         String id = formEpisodio.getid();
+        String numEP = formEpisodio.getnumEP();
         String idserie = formEpisodio.getidserie();
         String temporada = formEpisodio.gettemporada();
         String titulo = formEpisodio.gettitulo();
         String resumo = formEpisodio.getresumo();
 
-        episodio = new Episodio(id,titulo,temporada,resumo);   
+        episodio = new Episodio(Integer.parseInt(id),Integer.parseInt(numEP),Integer.parseInt(temporada),titulo,resumo);   
 
         //bd.salvarEpisodio(episodio);
         System.out.println("Salvando no banco de dados.." + episodio);

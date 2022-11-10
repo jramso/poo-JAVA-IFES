@@ -11,7 +11,7 @@ public class Serie {
         this.idade=idade;
     }
 
-    public Serie()
+    //public Serie();
 
     public int getId() {
         return id;

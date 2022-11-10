@@ -1,6 +1,6 @@
 package POOflix.src.CDU;
 
-import lab3tier.versao2.ui.*;
+import POOflix.src.UI.*;
 
 public class POOFlix {
     public static void main(String[] args){

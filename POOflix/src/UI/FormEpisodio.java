@@ -5,6 +5,7 @@ import POOflix.src.CDU.*;
 
 public class FormEpisodio extends Form{
     private String id;
+    private String numEP;
     private String idserie;
     private String temporada;
     private String titulo;
@@ -41,6 +42,7 @@ public class FormEpisodio extends Form{
 
             if(leepisodio){
                 id = c.readLine("@" + nomeserie + ">ID: ");
+                numEP = c.readLine("@"+nomeserie+">Nº do Episodio:");
                 temporada = c.readLine("@" + nomeserie + ">Temporada: ");
                 titulo = c.readLine("@" + nomeserie + ">Titulo: ");
                 resumo = c.readLine("@" + nomeserie + ">Resumo: ");
@@ -67,6 +69,7 @@ public class FormEpisodio extends Form{
     } // exibe()
 
     public String getid() { return id;};
+    public String getnumEP(){return numEP;};
     public String getidserie() { return idserie;}
     public String gettemporada() { return temporada;}
     public String gettitulo() { return titulo;}
