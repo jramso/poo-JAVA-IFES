@@ -1,5 +1,4 @@
-package POOflix.src.domain;
-
+package domain;
 import java.util.LinkedList;
 public class Personagem {
     
@@ -8,7 +7,7 @@ public class Personagem {
     private LinkedList<Performance> perfomances;
 
 
-    Personagem (int id, String nome){
+    public Personagem (int id, String nome){
         this.id=id;
         this.nome=nome;
     }

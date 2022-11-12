@@ -1,6 +1,8 @@
-package POOflix.src.CDU;
+package CDU;
 
-import POOflix.src.UI.*;
+import UI.*;
+import UI.FormEpisodio;
+import UI.FormSerie;
 
 public class CDUMain  extends CDU {
     private FormMain formMain;

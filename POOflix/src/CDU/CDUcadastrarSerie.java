@@ -1,7 +1,8 @@
-package POOflix.src.CDU;
+package CDU;
 
-import POOflix.src.UI.*;
-import POOflix.src.domain.*;
+import UI.*; 
+import domain.*;
+import UI.FormSerie;
 public class CDUcadastrarSerie  extends CDU {
     private Serie serie;
     private FormSerie formSerie;

@@ -1,4 +1,4 @@
-package POOflix.src.domain;
+package domain;
 
 public enum Categoria {
     

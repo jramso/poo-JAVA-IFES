@@ -1,12 +1,12 @@
-package POOflix.src.CDU;
+package CDU;
 
-import POOflix.src.UI.*;
+import UI.*;
 
 public class POOFlix {
-    public static void main(String[] args){
+    //public static void main(String[] args){
         FormMain telaMain = new FormMain();
         CDUMain casoUsoMain = new CDUMain(telaMain);
 
-        casoUsoMain.exec();
-    }
+        //casoUsoMain.exec();
+    //}
 }

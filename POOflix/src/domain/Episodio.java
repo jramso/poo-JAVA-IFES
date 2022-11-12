@@ -1,4 +1,4 @@
-package POOflix.src.domain;
+package domain;
 
 public class Episodio{
 
@@ -37,5 +37,5 @@ public class Episodio{
     public int getTemporada() {
         return temporada;
     }
-
+    //connect JPA
 }
