@@ -1,6 +1,5 @@
 package CDU;
 
-import UI.*;
 import domain.*;
 import UI.FormEpisodio;
 
@@ -12,7 +11,7 @@ public class CDUcadastrarEpis extends CDU {
         formEpisodio.exibe();
     }
 
-    public CDUcadastrarEpis(FormEpisodio formEpisodio){
+    public CDUcadastrarEpis(FormEpisodio formEpisodio) {
         this.formEpisodio = formEpisodio;
         this.formEpisodio.setcdu(this);
     }
@@ -26,14 +25,15 @@ public class CDUcadastrarEpis extends CDU {
     public void salvarEpisodio() {
         String id = formEpisodio.getid();
         String numEP = formEpisodio.getnumEP();
-        String idserie = formEpisodio.getidserie();
+        // String idserie = formEpisodio.getidserie();
         String temporada = formEpisodio.gettemporada();
         String titulo = formEpisodio.gettitulo();
         String resumo = formEpisodio.getresumo();
 
-        episodio = new Episodio(Integer.parseInt(id),Integer.parseInt(numEP),Integer.parseInt(temporada),titulo,resumo);   
+        episodio = new Episodio(Integer.parseInt(id), Integer.parseInt(numEP), Integer.parseInt(temporada), titulo,
+                resumo);
 
-        //bd.salvarEpisodio(episodio);
+        // bd.salvarEpisodio(episodio);
         System.out.println("Salvando no banco de dados.." + episodio);
     }
 }
