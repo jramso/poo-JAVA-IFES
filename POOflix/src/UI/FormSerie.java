@@ -1,7 +1,7 @@
-package POOflix.src.UI;
+package UI;
 
-import java.io.Console;
-import POOflix.src.CDU.*;
+import java.io.Console; 
+import CDU.*;
 public class FormSerie extends Form {
     private String id;
     private String titulo;

@@ -1,7 +1,8 @@
-package POOflix.src.UI;
+package UI;
 
 import java.io.Console;
-import POOflix.src.CDU.*;
+
+import CDU.*;
 
 public class FormMain extends Form {
     private CDUMain cdumain = null;

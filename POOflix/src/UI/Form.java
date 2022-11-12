@@ -1,4 +1,4 @@
-package POOflix.src.UI;
+package UI;
 
 public abstract class Form {
     public abstract void exibe();    

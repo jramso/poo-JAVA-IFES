@@ -1,7 +1,8 @@
-package POOflix.src.UI;
+package UI;
 
 import java.io.Console;
-import POOflix.src.CDU.*;
+
+import CDU.*;
 
 public class FormEpisodio extends Form{
     private String id;
@@ -11,7 +12,7 @@ public class FormEpisodio extends Form{
     private String titulo;
     private String resumo;
     private CDUcadastrarEpis cduce;
-
+    
     public void setcdu(CDUcadastrarEpis cduce){
         this.cduce = cduce;
     }
