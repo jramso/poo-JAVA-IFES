@@ -1,26 +1,31 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
+        "libs/postgresql-jdbc-8.1.407.jar",
+        "dependences/antlr-2.7.7.jar",
+        "dependences/classmate-1.3.0.jar",
+        "dependences/dom4j-1.6.1.jar",
+        "dependences/hibernate-commons-annotations-5.0.1.Final.jar",
+        "dependences/hibernate-core-5.2.11.Final.jar",
+        "dependences/javassist-3.20.0-GA.jar",
+        "dependences/jboss-logging-3.3.0.Final.jar",
+        "dependences/lucene-core-5.5.4.jar",
+        "dependences/lucene-queryparser-5.5.4.jar",
+        "dependences/xml-apis-1.3.03.jar",
+        "dependences/hibernate-search-engine-5.8.0.Final.jar",
+        "dependences/hibernate-search-orm-5.8.0.Final.jar",
         "libs/antlr-2.7.7.jar",
         "libs/dom4j-1.6.1.jar",
-        "libs/hibernate-commons-annotations-4.0.2.Final.jar",
-        "libs/hibernate-core-4.2.19.Final.jar",
-        "libs/hibernate-entitymanager-4.2.19.Final.jar",
-        "libs/hibernate-jpa-2.0-api-1.0.1.Final.jar",
-        "libs/javassist-3.18.1-GA.jar",
-        "libs/jboss-logging-3.1.0.GA.jar",
         "libs/jboss-transaction-api_1.1_spec-1.0.1.Final.jar",
-        "libs/postgresql-jdbc-8.1.407.jar"
+        "dependences/javax.persistence-2.2.0.jar"
     ],
     "java.project.sourcePaths": [
         "src",
-        "META-INF",
-        "META-INF/persistence.xml"
-        
+        "META-INF"
     ],
 
     "java.classPath": [
-        "META-INF",
-        "META-INF/persistence.xml"
+        "src/META-INF",
+        "src/META-INF/persistence.xml"
     ]
 }
