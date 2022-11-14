@@ -1,0 +1,13 @@
+{
+    "java.configuration.updateBuildConfiguration": "interactive",
+
+    "java.classPath": [
+        "src.META-INF",
+        "META-INF",
+        "src/META-INF/persistence.xml"
+    ],
+
+
+
+    
+}
