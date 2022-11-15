@@ -30,7 +30,11 @@ public class CDUcadastrarEpis extends CDU {
         String titulo = formEpisodio.gettitulo();
         String resumo = formEpisodio.getresumo();
 
-        episodio = new Episodio(Integer.parseInt(id), Integer.parseInt(numEP), Integer.parseInt(temporada), titulo,
+        episodio = new Episodio(
+                Integer.parseInt(id),
+                Integer.parseInt(numEP),
+                Integer.parseInt(temporada),
+                titulo,
                 resumo);
 
         // bd.salvarEpisodio(episodio);

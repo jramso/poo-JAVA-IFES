@@ -5,25 +5,35 @@ public class Performance {
     private Personagem personagem;
     private Ator ator;
 
-    public Performance(Episodio idep, Personagem idepers, Ator ator){
-        this.episodio=idep;
-        this.personagem=idepers;
-        this.ator=ator;
+    public Performance(Episodio idep, Personagem idepers, Ator ator) {
+        this.episodio = idep;
+        this.personagem = idepers;
+        this.ator = ator;
 
     }
-    
-    public Episodio getidep(){
+
+    public void setEpisodio(Episodio episodio) {
+        this.episodio = episodio;
+    }
+
+    public void setPersonagem(Personagem personagem) {
+        this.personagem = personagem;
+    }
+
+    public void setAtor(Ator ator) {
+        this.ator = ator;
+    }
+
+    public Episodio getidep() {
         return episodio;
     }
 
-    public Personagem getidperson(){
+    public Personagem getidperson() {
         return personagem;
     }
 
-    public Ator getator(){
+    public Ator getator() {
         return ator;
     }
-    
-
 
 }
