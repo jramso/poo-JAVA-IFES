@@ -18,7 +18,7 @@
 	
 	<properties>
 	    <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
-		<property name="javax.persistence.jdbc.url" value="jdbc:postgres://motty.db.elephantsql.com/mfdbjbho"/>
+		<property name="javax.persistence.jdbc.url" value="jdbc:postgres://motty.db.elephantsql.com/127.0.0.1/mfdbjbho"/>
 		<property name="javax.persistence.jdbc.user" value="mfdbjbho"/>
 		<property name="javax.persistence.jdbc.password" value="tXjGYj5HTRaOSbi-6oGfx20zGKRAeCP6"/>
 		<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>

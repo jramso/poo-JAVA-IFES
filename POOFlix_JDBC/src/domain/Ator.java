@@ -2,18 +2,24 @@ package domain;
 
 import java.io.Serializable;
 
+import connection.annotation.*;
+
+@Entidade
+@Tabela(tabela = "Ator")
 public class Ator implements Serializable {
 
+    @Coluna(col = "id", pk = true)
     private int id;
+    @Coluna(col = "nome")
     private String nome;
-    private int nacionalidade;
+    @Coluna(col = "nacionalidade")
+    private String nacionalidade;
 
-    /*
-     * public Ator(int id,String nome){
-     * this.id=id;
-     * this.nome=nome;
-     * }
-     */
+    public Ator(int id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+
     public Ator() {
 
     }
@@ -27,12 +33,12 @@ public class Ator implements Serializable {
         return id;
     }
 
-    public int getNacionalidade() {
+    public String getNacionalidade() {
         return nacionalidade;
     }
 
     // Setters
-    public void setNacionalidade(int nacionalidade) {
+    public void setNacionalidade(String nacionalidade) {
         this.nacionalidade = nacionalidade;
     }
 
