@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 import connection.annotation.*;
 
-@Entidade
-@Tabela(tabela = "Ator")
+//@Entidade
+//@Tabela(tabela = "Ator")
 public class Ator implements Serializable {
 
-    @Coluna(col = "id", pk = true)
+    //@Coluna(col = "id", pk = true)
     private int id;
-    @Coluna(col = "nome")
+    //@Coluna(col = "nome")
     private String nome;
-    @Coluna(col = "nacionalidade")
+    //@Coluna(col = "nacionalidade")
     private String nacionalidade;
 
     public Ator(int id, String nome) {
@@ -21,7 +21,7 @@ public class Ator implements Serializable {
     }
 
     public Ator() {
-
+        // Using hibernate Library
     }
 
     // Getters

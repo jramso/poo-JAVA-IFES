@@ -35,10 +35,14 @@ public class Conecta {
     }
 
     public Conecta(String user, String senha, String banco) {
-        setBanco(banco);
-        setUser(user);
-        setSenha(senha);
-        setUrl("jdbc:postgresql://motty.db.elephantsql.com/" + banco);
+        try{
+            setBanco(banco);
+            setUser(user);
+            setSenha(senha);
+            setUrl("jdbc:postgresql://motty.db.elephantsql.com/" + banco);
+        }catch(Exception e){
+            System.out.println("Erro de tipo de dados no constructor");
+        }
     }
 
     public void connectDB() {
@@ -56,25 +60,7 @@ public class Conecta {
         }
     }
 
-    // public Connection conectaBanco() {
-
-    // try {
-    // String driver = "jdbc:";
-    // String banco = getUrlBanco();
-    // String user = getUser();
-    // String passwd = getPassword();
-    // if (banco != null && user != null && passwd != null) {
-    // conn = DriverManager.getConnection(driver + banco, user, passwd);
-    // } else if (txt != null) {
-    // conn = DriverManager.getConnection(driver + txt);
-    // }
-
-    // } catch (SQLException ex) {
-    // System.err.println(ex);
-    // ex.printStackTrace();
-    // }
-    // return conn;
-    // }
+    
 
     public void disconnectDB() {
         try {
