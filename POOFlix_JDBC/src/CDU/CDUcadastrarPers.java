@@ -31,5 +31,6 @@ public class CDUcadastrarPers extends CDU{
 
         //bd.salvarSerie(serie);
         System.out.println("Salvando no banco de dados.." + person);
+		
     }
 }

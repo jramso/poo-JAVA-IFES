@@ -18,9 +18,10 @@ public class CDUMain  extends CDU {
 
     public void processaOpcao(String opcao){
         switch(opcao) {
-            case "1": execCadSerie(); break;
-            case "2": execCadEpisodio(); break;
-            case "3": execCadAtor(); break;
+            case "1": execCadSerie(); break; //Serie
+            case "2": execCadEpisodio(); break; //Episodio
+            case "3": execCadPers(); break; //personagem
+            case "4": execCadAtor(); break; //Ator
         }
     }
 
@@ -34,6 +35,11 @@ public class CDUMain  extends CDU {
         FormEpisodio telaEpisodio = new FormEpisodio();
         CDUcadastrarEpis casoUsoEpis = new CDUcadastrarEpis(telaEpisodio);
         casoUsoEpis.exec();        
+    }
+
+    public void execCadPers(){
+        FormPersonagem telaPers = new FormPersonagem();
+        CDUcadastrarPers casoUsoPers = new CDUcadastrarPers(telaPers);
     }
 
     public void execCadAtor(){
