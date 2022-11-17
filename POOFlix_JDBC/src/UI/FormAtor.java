@@ -5,6 +5,7 @@ public class FormAtor extends Form {
 	private String id;
 	private String nome;
 	private String nacionalidade;
+    private String performance;
 
 	public void exibe() {
 
@@ -13,7 +14,7 @@ public class FormAtor extends Form {
         String continuar;     
         boolean leserie = true;
         boolean leepisodio = false;  
-        String nomeserie = null;
+        String nomeAtor = null;
 
         System.out.println("CADASTRANDO UM ATOR\n");
 
@@ -22,11 +23,14 @@ public class FormAtor extends Form {
                 id = c.readLine("Qual Ator?(id): ");
                 nome = c.readLine("Qual o nome do Ator?");
 				nacionalidade  = c.readLine("Qual a Nacionalidade?");
+                leepisodio= nome!=null&&id!=null&&nacionalidade!=null;
+                nomeAtor=nome;
+                
 				
                 leepisodio = nomeserie != null;
 
-                if(nomeserie == null) {
-                    System.err.println("!!série não existe !!");
+                if(nomeAtor == null) {
+                    System.err.println("!!Ator inválido !!");
                     leserie = true;
                     leepisodio = false;
                     termina = false; 
@@ -34,11 +38,9 @@ public class FormAtor extends Form {
             }
 
             if(leepisodio){
-                id = c.readLine("@" + nomeserie + ">ID: ");
-                numEP = c.readLine("@"+nomeserie+">Nº do Episodio:");
-                temporada = c.readLine("@" + nomeserie + ">Temporada: ");
-                titulo = c.readLine("@" + nomeserie + ">Titulo: ");
-                resumo = c.readLine("@" + nomeserie + ">Resumo: ");
+
+                performance = c.readLine("@" + nomeAtor + ">Performance desse Ator: ");
+                
 
                 continuar = c.readLine("(S)erie (E)pisodio (T)erminar): ");
 

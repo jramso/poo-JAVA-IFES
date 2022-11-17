@@ -20,6 +20,7 @@ public class CDUMain  extends CDU {
         switch(opcao) {
             case "1": execCadSerie(); break;
             case "2": execCadEpisodio(); break;
+            case "3": execCadAtor(); break;
         }
     }
 
@@ -34,4 +35,12 @@ public class CDUMain  extends CDU {
         CDUcadastrarEpis casoUsoEpis = new CDUcadastrarEpis(telaEpisodio);
         casoUsoEpis.exec();        
     }
+
+    public void execCadAtor(){
+        FormAtor telaAtor = new FormAtor();
+        CDUcadastrarAtor casoUsoAtor = new CDUcadastrarAtor(telaAtor);
+        casoUsoEpis.exec();        
+    }
+
+    
 }
