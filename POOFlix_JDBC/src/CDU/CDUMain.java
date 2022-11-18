@@ -3,50 +3,59 @@ package CDU;
 import UI.*;
 import UI.FormEpisodio;
 import UI.FormSerie;
+import connection.Conecta;
 
-public class CDUMain  extends CDU {
+public class CDUMain extends CDU {
     private FormMain formMain;
+    private Conecta conexao = new Conecta("mfdbjbho", "tXjGYj5HTRaOSbi-6oGfx20zGKRAeCP6", "mfdbjbho");
 
-    public CDUMain(FormMain formMain){
+    public CDUMain(FormMain formMain) {
         this.formMain = formMain;
         this.formMain.setcdu(this);
-    }  
-    
+    }
+
     public void exec() {
         formMain.exibe();
     }
 
-    public void processaOpcao(String opcao){
-        switch(opcao) {
-            case "1": execCadSerie(); break; //Serie
-            case "2": execCadEpisodio(); break; //Episodio
-            case "3": execCadPers(); break; //personagem
-            case "4": execCadAtor(); break; //Ator
+    public void processaOpcao(String opcao) {
+        switch (opcao) {
+            case "1":
+                execCadSerie();
+                break; // Serie
+            case "2":
+                execCadEpisodio();
+                break; // Episodio
+            case "3":
+                execCadPers();
+                break; // personagem
+            case "4":
+                execCadAtor();
+                break; // Ator
         }
     }
 
-    public void execCadSerie(){
+    public void execCadSerie() {
         FormSerie telaSerie = new FormSerie();
         CDUcadastrarSerie casoUsoSerie = new CDUcadastrarSerie(telaSerie);
         casoUsoSerie.exec();
     }
 
-    public void execCadEpisodio(){
+    public void execCadEpisodio() {
         FormEpisodio telaEpisodio = new FormEpisodio();
         CDUcadastrarEpis casoUsoEpis = new CDUcadastrarEpis(telaEpisodio);
-        casoUsoEpis.exec();        
+        casoUsoEpis.exec();
     }
 
-    public void execCadPers(){
+    public void execCadPers() {
         FormPersonagem telaPers = new FormPersonagem();
         CDUcadastrarPers casoUsoPers = new CDUcadastrarPers(telaPers);
     }
 
-    public void execCadAtor(){
+    public void execCadAtor() {
         FormAtor telaAtor = new FormAtor();
         CDUcadastrarAtor casoUsoAtor = new CDUcadastrarAtor(telaAtor);
-        casoUsoEpis.exec();        
+        casoUsoAtor.exec();
     }
 
-    
 }
