@@ -35,12 +35,12 @@ public class Conecta {
     }
 
     public Conecta(String user, String senha, String banco) {
-        try{
+        try {
             setBanco(banco);
             setUser(user);
             setSenha(senha);
             setUrl("jdbc:postgresql://motty.db.elephantsql.com/" + banco);
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Erro de tipo de dados no constructor");
         }
     }
@@ -59,8 +59,6 @@ public class Conecta {
             sqle.printStackTrace();
         }
     }
-
-    
 
     public void disconnectDB() {
         try {
@@ -110,6 +108,11 @@ public class Conecta {
             sqle.printStackTrace();
             return "SQLException";
         }
+    }
+
+    public static void salvarObj(Object obj) {
+        String tabela = (obj.getClass().getSimpleName());
+
     }
 
     public void setUser(String user) {
