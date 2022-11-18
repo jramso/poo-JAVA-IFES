@@ -7,7 +7,7 @@ import connection.Conecta;
 
 public class CDUMain extends CDU {
     private FormMain formMain;
-    private Conecta conexao = new Conecta("mfdbjbho", "tXjGYj5HTRaOSbi-6oGfx20zGKRAeCP6", "mfdbjbho");
+    private Conecta conexao = new Conecta("mfdbjbho", "3GXwClW96Y7v_lCWI-FBbebx9si0Z3ZN", "mfdbjbho");
 
     public CDUMain(FormMain formMain) {
         this.formMain = formMain;
