@@ -11,6 +11,8 @@ public class FormAtor extends Form {
     private String nacionalidade;
     private String performance;
 
+    FormPerformance formPf;
+
     private CDUcadastrarAtor cduca;
 
     public void setcdu(CDUcadastrarAtor cduca) {
@@ -48,8 +50,8 @@ public class FormAtor extends Form {
 
             if (leepisodio) {
 
-                performance = c.readLine("@" + nomeAtor + ">Performance desse Ator: ");
-
+                formPf.setIdAtor(Integer.parseInt(id));
+                formPf.exibe();
                 continuar = c.readLine("(S)erie (E)pisodio (T)erminar): ");
 
                 if (continuar.toLowerCase().equals("s")) {
