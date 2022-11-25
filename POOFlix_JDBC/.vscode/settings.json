@@ -8,5 +8,9 @@
         "exclude": [
             "lib/postgresql-jdbc-8.1.407.jar"
         ]
-    }
+    },
+
+    "java.classPath": [
+        "src"
+    ]
 }

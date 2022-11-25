@@ -8,7 +8,14 @@ public class CDUcadastrarPf {
     private FormPerformance formPf;
 
     public CDUcadastrarPf(FormPerformance formPf) {
-        this.formPf = formPf;
         this.formPf.setcdu(this);
+    }
+
+    public void exec() {
+        formPf.exibe();
+    }
+
+    public void salvarPerformance() {
+        // TODO salvar perf
     }
 }

@@ -7,7 +7,6 @@ import connection.Conecta;
 
 public class CDUMain extends CDU {
     private FormMain formMain;
-    private Conecta conexao = new Conecta("mfdbjbho", "tXjGYj5HTRaOSbi-6oGfx20zGKRAeCP6", "mfdbjbho");
 
     public CDUMain(FormMain formMain) {
         this.formMain = formMain;
@@ -50,6 +49,7 @@ public class CDUMain extends CDU {
     public void execCadPers() {
         FormPersonagem telaPers = new FormPersonagem();
         CDUcadastrarPers casoUsoPers = new CDUcadastrarPers(telaPers);
+        casoUsoPers.exec();
     }
 
     public void execCadAtor() {

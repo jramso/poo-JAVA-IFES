@@ -17,15 +17,15 @@ public class FormPersonagem extends Form {
 	public void exibe() {
 		Console c = System.console();
 		boolean termina = false;
-		// String continuar;
-		boolean lePs = true;
+		String continuar;
+		boolean lePs = false;
 		boolean lepersonagem = false;
 		String idperf = null;
 
 		System.out.println("CADASTRANDO PERSONAGENS:");
 
 		while (!termina) {// Enquanto termina for diferente de false
-			if (lePs) {
+			if (!lePs) {
 				idPerformance = c.readLine("Qual Performance?(id)");
 				idperf = cdups.getPerf(Integer.parseInt(idPerformance));
 				lepersonagem = idperf != null; // personagem existe
@@ -41,6 +41,21 @@ public class FormPersonagem extends Form {
 
 			if (lepersonagem) {
 				idPs = Integer.parseInt(c.readLine("@" + idperf + ">ID:"));
+
+				continuar = c.readLine("(Pe)rformance (P)ersonagem (T)erminar): ");
+
+				if (continuar.toLowerCase().equals("pe")) {
+					lePs = true;
+					lepersonagem = false;
+					termina = false;
+				} else if (continuar.toLowerCase().equals("p")) {
+					// salvar episodio no banco de dados.
+					cdups.salvarPersonagem(); // EM OBRAS.
+					lePs = false;
+					lepersonagem = true;
+					termina = false;
+				} else
+					termina = true;
 			}
 
 		} // fim while

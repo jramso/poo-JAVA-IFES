@@ -23,7 +23,7 @@ public class CDUcadastrarSerie extends CDU {
 
         serie = new Serie(Integer.parseInt(id), titulo, idade);
 
-        // bd.salvarSerie(serie);
+        serie.salvarSerie();
         System.out.println("Salvando no banco de dados.." + serie);
     }
 }

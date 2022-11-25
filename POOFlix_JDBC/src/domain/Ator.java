@@ -1,18 +1,9 @@
 package domain;
 
-import java.io.Serializable;
+public class Ator {
 
-import connection.annotation.*;
-
-//@Entidade
-//@Tabela(tabela = "Ator")
-public class Ator implements Serializable {
-
-    //@Coluna(col = "id", pk = true)
     private int id;
-    //@Coluna(col = "nome")
     private String nome;
-    //@Coluna(col = "nacionalidade")
     private String nacionalidade;
 
     public Ator(int id, String nome) {

@@ -25,12 +25,14 @@ public class FormMain extends Form {
             System.out.println("4. Cadastrar Ator\n");
             System.out.println("5. Sair\n");
 
-            opcao = c.readLine("Digite a opção desejada: ");
+            opcao = (String) c.readLine("Digite a opção desejada: ");
+            System.out.println(opcao);
 
             termina = opcao.equals("5");
 
-            if (!termina)
+            if (!termina) {
                 cdumain.processaOpcao(opcao);
+            }
         }
     }
 }
