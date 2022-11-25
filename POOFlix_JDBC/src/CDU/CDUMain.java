@@ -3,7 +3,6 @@ package CDU;
 import UI.*;
 import UI.FormEpisodio;
 import UI.FormSerie;
-import connection.Conecta;
 
 public class CDUMain extends CDU {
     private FormMain formMain;
