@@ -1,4 +1,4 @@
-package connection;
+package persistencia;
 
 import java.lang.reflect.Field;
 import java.sql.Connection;
