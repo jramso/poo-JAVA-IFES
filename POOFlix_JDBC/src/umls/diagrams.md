@@ -12,6 +12,7 @@ sequenceDiagram
 2. Caso de uso `Cadastrar Episodio`:
 ```mermaid
 sequenceDiagram
+    autonumber
     FormCadastrarEpisodio->>CducadastrarEpisodio: id,titulo
     CducadastrarEpisodio->>Episodio: salvarEpisodio()
     Episodio->>EpisodioDAO: insertSerie()
