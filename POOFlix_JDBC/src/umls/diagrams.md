@@ -21,5 +21,6 @@ sequenceDiagram
 ```
 
 3. Caso de uso `Cadastrar Ator`:
+...
 4. Caso de uso `Cadastrar Personagem`:
 5. Caso de uso `Cadastrar Performance`:
