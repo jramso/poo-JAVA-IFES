@@ -29,7 +29,7 @@ public class DAOSerie extends DAOPOOFlix {
 		try {
 			Serie serie = (Serie) objpooflix;
 			PreparedStatement ps = conexaobd.prepareStatement("insert into serie(id, titulo) values (?, ?)");
-			ps.setInt(1,(serie.getId());
+			ps.setInt(1, (serie.getId()));
 			ps.setString(2, serie.getTitulo());
 			ps.execute();
 			ps.close();
@@ -78,7 +78,7 @@ public class DAOSerie extends DAOPOOFlix {
 			while (rs.next()) {
 				String id = String.valueOf(rs.getInt("id"));
 				String titulo = rs.getString("titulo");
-				Serie serie = new Serie(id, titulo, 0);
+				Serie serie = new Serie(Integer.parseInt(id), titulo, 0);
 
 				series.add(serie);
 			}

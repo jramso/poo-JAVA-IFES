@@ -1,15 +1,11 @@
 package persistencia;
 
-import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.Properties;
-
-import javax.management.Query;
 
 public class Conecta {
 
@@ -38,7 +34,7 @@ public class Conecta {
         }
     }
 
-    public void connectDB() {
+    public Connection connectDB() {
         Properties props = new Properties();
         props.setProperty("user", getUser());
         props.setProperty("password", getSenha());
@@ -50,6 +46,7 @@ public class Conecta {
             System.err.println(sqle);
             sqle.printStackTrace();
         }
+        return conn;
     }
 
     public void disconnectDB() {

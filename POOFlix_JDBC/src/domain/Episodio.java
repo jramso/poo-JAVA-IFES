@@ -1,6 +1,6 @@
 package domain;
 
-public class Episodio {
+public class Episodio implements OBJPOOFlix {
 
     private int id;
     private int numEP;

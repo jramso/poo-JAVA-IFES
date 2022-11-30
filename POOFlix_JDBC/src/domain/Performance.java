@@ -1,6 +1,6 @@
 package domain;
 
-public class Performance {
+public class Performance implements OBJPOOFlix {
     private Episodio episodio;
     private Personagem personagem;
     private Ator ator;

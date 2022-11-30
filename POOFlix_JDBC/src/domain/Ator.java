@@ -1,6 +1,6 @@
 package domain;
 
-public class Ator {
+public class Ator implements OBJPOOFlix {
 
     private int id;
     private String nome;

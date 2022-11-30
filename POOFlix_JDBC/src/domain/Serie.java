@@ -1,6 +1,6 @@
 package domain;
 
-public class Serie {
+public class Serie implements OBJPOOFlix {
     private int id;
     private String titulo;
     private int idade;
