@@ -1,5 +1,5 @@
 package domain;
-import persistencia.DAOserie;
+
 public class Serie {
     private int id;
     private String titulo;

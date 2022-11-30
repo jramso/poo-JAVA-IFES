@@ -11,27 +11,20 @@ import java.util.Properties;
 
 import javax.management.Query;
 
-import connection.annotation.Coluna;
-import connection.annotation.Tabela;
-
 public class Conecta {
 
     private Connection conn = null;
     private String user, senha, banco, url;
     private String txt;
 
-    // "postgres://mfdbjbho:tXjGYj5HTRaOSbi-6oGfx20zGKRAeCP6@motty.db.elephantsql.com/mfdbjbho";
-
-    /*
-     * public Conecta(String urlbanco, String user, String passwd) {
-     * this.user = user;
-     * this.senha = passwd;
-     * this.banco = urlbanco;
-     * }
-     */
-
     public Conecta(String fullURL) {
         this.txt = fullURL;
+        try {
+            setUrl(txt);
+
+        } catch (Exception ex) {
+            System.out.println("Problemas com a conexão:\n\n" + ex);
+        }
     }
 
     public Conecta(String user, String senha, String banco) {
@@ -50,8 +43,7 @@ public class Conecta {
         props.setProperty("user", getUser());
         props.setProperty("password", getSenha());
         try {
-            Connection conn = DriverManager.getConnection(getUrl(),
-                    props);
+            Connection conn = DriverManager.getConnection(getUrl(), props);
             setConn(conn);
             System.out.println("Conexao sucedida");
         } catch (SQLException sqle) {
@@ -67,31 +59,6 @@ public class Conecta {
             System.err.println(sqle);
             sqle.printStackTrace();
         }
-    }
-
-    public void insert(Object obj) throws IllegalArgumentException, IllegalAccessException {
-        String tabela = "";
-        String colunas = "";
-        Tabela persist = obj.getClass().getAnnotation(Tabela.class);
-
-        if (persist != null) {
-            tabela = persist.tabela();
-        }
-
-        for (Field field : obj.getClass().getDeclaredFields()) {
-            field.setAccessible(true);
-            Coluna col = field.getAnnotation(Coluna.class);
-            if (col != null) {
-                Object valorColuna = field.get(obj);
-                String sqlValue = (String) valorColuna;
-                colunas = colunas + "," + sqlValue;
-            }
-        }
-        if (tabela != "" && colunas != "") {
-            String sql = "INSERT INTO " + tabela + " values(" + colunas + ")";
-            queryDB(sql);
-        }
-
     }
 
     public String queryDB(String query) {
@@ -110,9 +77,8 @@ public class Conecta {
         }
     }
 
-    public static void salvarObj(Object obj) {
-        String tabela = (obj.getClass().getSimpleName());
-
+    public Connection getConn() {
+        return conn;
     }
 
     public void setUser(String user) {
@@ -153,10 +119,6 @@ public class Conecta {
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public Connection getConn() {
-        return conn;
     }
 
     public void setConn(Connection conn) {

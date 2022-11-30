@@ -1,6 +1,6 @@
 package persistencia;
 
-import dominio.*;
+import domain.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,76 +20,73 @@ import java.util.List;
 
 public class DAOSerie extends DAOPOOFlix {
 	private Connection conexaobd;
-	
+
 	public DAOSerie(Connection cnx) {
 		conexaobd = cnx;
 	}
-	
+
 	public int adiciona(OBJPOOFlix objpooflix) {
 		try {
 			Serie serie = (Serie) objpooflix;
-			PreparedStatement ps = conexaobd.prepareStatement("insert into serie(id, titulo) values (?, ?)");			
-			ps.setInt(1, Integer.parseInt(serie.getid()));
-			ps.setString(2, serie.gettitulo());
+			PreparedStatement ps = conexaobd.prepareStatement("insert into serie(id, titulo) values (?, ?)");
+			ps.setInt(1,(serie.getId());
+			ps.setString(2, serie.getTitulo());
 			ps.execute();
-			ps.close();		
+			ps.close();
 			return 0;
-		} 
-		catch (SQLException e) {
+		} catch (SQLException e) {
 			System.out.println("Problemas em DAOSerie.adiciona" + e.getMessage());
 			return -1;
-		}		
+		}
 	}
-	
+
 	public int atualiza(OBJPOOFlix objpooflix) {
 		try {
 			Serie serie = (Serie) objpooflix;
-			PreparedStatement ps = conexaobd.prepareStatement("update serie set titulo=? where id=?");			
-			ps.setInt(1, Integer.parseInt(serie.getid()));
-			ps.setString(2, serie.gettitulo());
+			PreparedStatement ps = conexaobd.prepareStatement("update serie set titulo=? where id=?");
+			ps.setInt(1, (serie.getId()));
+			ps.setString(2, serie.getTitulo());
 			ps.executeUpdate();
-			ps.close();	
+			ps.close();
 			return 0;
-		} 
-		catch (SQLException e) {
+		} catch (SQLException e) {
 			System.out.println("Problemas em DAOSerie.atualiza" + e.getMessage());
-			return -1;			
-		}		
+			return -1;
+		}
 	}
-	
+
 	public int deleta(OBJPOOFlix objpooflix) {
 		try {
 			Serie serie = (Serie) objpooflix;
-			PreparedStatement ps = conexaobd.prepareStatement("delete from serie where id=?");			
-			ps.setInt(1, Integer.parseInt(serie.getid()));
+			PreparedStatement ps = conexaobd.prepareStatement("delete from serie where id=?");
+			ps.setInt(1, serie.getId());
 			ps.executeUpdate();
-			ps.close();	
+			ps.close();
 			return 0;
-		} 
-		catch (SQLException e) {
+		} catch (SQLException e) {
 			System.out.println("Problemas em DAOSerie.deleta" + e.getMessage());
-			return -1;			
-		}		
+			return -1;
+		}
 	}
-	
+
 	public List<OBJPOOFlix> lista() {
 		try {
 			List<OBJPOOFlix> series = new ArrayList<OBJPOOFlix>();
-			
+
 			PreparedStatement ps = conexaobd.prepareStatement("select id, titulo from serie");
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				String id = String.valueOf(rs.getInt("id"));
 				String titulo = rs.getString("titulo");
-				Serie serie = new Serie(id,titulo,0);
-				
+				Serie serie = new Serie(id, titulo, 0);
+
 				series.add(serie);
 			}
-			
+
 			rs.close();
 			ps.close();
-			
-			return series;			
+
+			return series;
 		} catch (SQLException e) {
 			System.out.println("Problemas em DAOSerie.lista" + e.getMessage());
 			return null;
