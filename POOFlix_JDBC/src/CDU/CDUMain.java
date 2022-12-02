@@ -18,6 +18,8 @@ public class CDUMain extends CDU {
     public CDUMain(FormMain formMain) {
         this.formMain = formMain;
         this.formMain.setcdu(this);
+        bd = new Conecta(usuario, senha, banco);
+        conexaobd = bd.connectDB();
     }
 
     public void exec() {
@@ -52,6 +54,8 @@ public class CDUMain extends CDU {
             case "4":
                 execCadAtor();
                 break; // Ator
+            default:
+                System.out.println("erro!!");
         }
     }
 
@@ -65,7 +69,7 @@ public class CDUMain extends CDU {
 
     public void execCadSerie() {
         FormSerie telaSerie = new FormSerie();
-        CDUcadastrarSerie casoUsoSerie = new CDUcadastrarSerie(telaSerie, bd.getConn());
+        CDUcadastrarSerie casoUsoSerie = new CDUcadastrarSerie(telaSerie, conexaobd);
         casoUsoSerie.exec();
     }
 

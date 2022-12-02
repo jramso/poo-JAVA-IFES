@@ -5,7 +5,7 @@ import java.io.Console;
 import CDU.*;
 
 public class FormMain extends Form {
-    private CDUMain cdumain = null;
+    private CDUMain cdumain;
 
     public void setcdu(CDUMain cdumain) {
         this.cdumain = cdumain;
@@ -15,7 +15,6 @@ public class FormMain extends Form {
         String opcao;
         Console c = System.console();
         boolean termina = false;
-
         System.out.println("POOFlix\n");
 
         while (!termina) {

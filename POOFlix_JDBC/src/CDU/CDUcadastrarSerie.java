@@ -14,7 +14,7 @@ public class CDUcadastrarSerie extends CDU {
     public CDUcadastrarSerie(FormSerie formSerie, Connection conexaobd) {
         this.formSerie = formSerie;
         this.formSerie.setcdu(this);
-        conexaobd = conexaobd;
+        this.conexaobd = conexaobd;
     }
 
     public void exec() {
